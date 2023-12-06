@@ -19,6 +19,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
+        
+        let namesCar = nameCar[indexPath.row]
+        
+        cell.nameCarLabel.text = namesCar
+        
         return cell
     }
     
