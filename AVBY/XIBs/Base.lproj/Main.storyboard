@@ -67,7 +67,7 @@
         <!--Поиск-->
         <scene sceneID="PY5-Cu-bF5">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uw4-76-dps" customClass="AVViewController" customModule="AVBY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AVViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uw4-76-dps" customClass="AVViewController" customModule="AVBY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0bk-mc-H3g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
