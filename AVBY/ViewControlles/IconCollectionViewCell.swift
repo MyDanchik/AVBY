@@ -6,6 +6,14 @@ class IconCollectionViewCell: UICollectionViewCell {
     
     func setImage(_ image: UIImage) {
         iconImageView.image = image
-        //iconImageView.layer.cornerRadius = 0
+    }
+    func setCornerRadiusFirst(_ cornerRadius: CGFloat) {
+        iconImageView.layer.cornerRadius = cornerRadius
+        iconImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+    }
+    
+    func setCornerRadiusLast(_ cornerRadius: CGFloat) {
+        iconImageView.layer.cornerRadius = cornerRadius
+        iconImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
     }
 }

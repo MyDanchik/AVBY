@@ -31,14 +31,11 @@ class SearchTableViewCell: UITableViewCell {
         photoCollectionView.register(UINib(nibName: "IconCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "IconCollectionViewCell")
         selectionStyle = .none
         textEdit()
+        
         if let layout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.minimumInteritemSpacing = 3
             layout.minimumLineSpacing = 0
         }
-        
-        //photoCollectionView.layer.cornerRadius = 0
-        
-        
     }
     
     private func textEdit() {
@@ -66,6 +63,15 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let iconCell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: "IconCollectionViewCell", for: indexPath) as? IconCollectionViewCell {
             iconCell.setImage(photos[indexPath.row])
+    
+            if indexPath.item == 0 {
+                iconCell.setCornerRadiusFirst(5)
+            } else if indexPath.item == photos.count - 1 {
+                iconCell.setCornerRadiusLast(5)
+            } else {
+                iconCell.setCornerRadiusFirst(0)
+                iconCell.setCornerRadiusLast(0)
+            }
             
             return iconCell
         }
@@ -76,7 +82,6 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         return photos.count
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let image = photos[indexPath.item]
         
@@ -85,12 +90,10 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         let scaledSize = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: targetSize)).size
         
         return CGSize(width: ceil(scaledSize.width), height: ceil(scaledSize.height))
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
     }
     
     
