@@ -29,9 +29,25 @@ class SearchTableViewCell: UITableViewCell {
         photoCollectionView.dataSource = self
         photoCollectionView.register(UINib(nibName: "IconCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "IconCollectionViewCell")
         selectionStyle = .none
+        
+        
+        
+        nameCarLabel.textColor = UIColor.black
+        nameCarLabel.font =  UIFont.systemFont(ofSize: 18)
+        
+        priceCarLabel.textColor = UIColor.black
+        priceCarLabel.font = UIFont.boldSystemFont(ofSize: 25)
+        
+        dpriceCarLabel.textColor = UIColor.darkGray
+        dpriceCarLabel.font =  UIFont.systemFont(ofSize: 17)
+        
+        infoCarLabel.textColor = UIColor.black
+        infoCarLabel.font =  UIFont.systemFont(ofSize: 18)
+        
+        locationCarLabel.textColor = UIColor.darkGray
+        locationCarLabel.font =  UIFont.systemFont(ofSize: 15)
+        
     }
-
-    
 }
 
 

@@ -14,7 +14,7 @@ private let car1 = Car(name: "Audi A4 B9 · Рестайлинг",
                        location: "г.Минск1",
                        image: [
                         UIImage(named: "1")!,
-                        UIImage(named: "1")!,
+                        UIImage(named: "2")!,
                         UIImage(named: "1")!,
                        ])
 
@@ -25,7 +25,7 @@ private let car2 = Car(name: "Audi A4 B9 · Рестайлинг",
                        location: "г.Минск2",
                        image: [
                         UIImage(named: "1")!,
-                        UIImage(named: "1")!,
+                        UIImage(named: "2")!,
                         UIImage(named: "1")!,
                        ])
 
@@ -36,7 +36,7 @@ private let car3 = Car(name: "Audi A4 B9 · Рестайлинг",
                        location: "г.Минск3",
                        image: [
                         UIImage(named: "1")!,
-                        UIImage(named: "1")!,
+                        UIImage(named: "2")!,
                         UIImage(named: "1")!,
                        ])
 
@@ -47,7 +47,7 @@ private let car4 = Car(name: "Audi A4 B9 · Рестайлинг",
                        location: "г.Минск4",
                        image: [
                         UIImage(named: "1")!,
-                        UIImage(named: "1")!,
+                        UIImage(named: "2")!,
                         UIImage(named: "1")!,
                        ])
 
@@ -58,7 +58,7 @@ private let car5 = Car(name: "Audi A4 B9 · Рестайлинг",
                        location: "г.Минск5",
                        image: [
                         UIImage(named: "1")!,
-                        UIImage(named: "1")!,
+                        UIImage(named: "2")!,
                         UIImage(named: "1")!,
                        ])
 

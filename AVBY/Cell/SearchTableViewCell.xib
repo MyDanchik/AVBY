@@ -69,11 +69,11 @@
                                         <constraints>
                                             <constraint firstItem="gVn-fU-xbU" firstAttribute="leading" secondItem="ayD-YN-CYR" secondAttribute="trailing" constant="10" id="2IR-94-DaK"/>
                                             <constraint firstItem="ZHb-YK-bvM" firstAttribute="leading" secondItem="cVJ-sW-5o0" secondAttribute="trailing" constant="5" id="Bgk-mr-pEw"/>
-                                            <constraint firstItem="ZHb-YK-bvM" firstAttribute="bottom" secondItem="cVJ-sW-5o0" secondAttribute="bottom" id="F26-8v-8Rq"/>
                                             <constraint firstItem="ayD-YN-CYR" firstAttribute="top" secondItem="dVp-oi-4PJ" secondAttribute="top" constant="10" id="JJB-ep-Ghq"/>
                                             <constraint firstItem="ayD-YN-CYR" firstAttribute="baseline" secondItem="gVn-fU-xbU" secondAttribute="baseline" id="L0V-BO-341"/>
                                             <constraint firstAttribute="trailing" secondItem="gVn-fU-xbU" secondAttribute="trailing" constant="10" id="NRa-zg-UCW"/>
                                             <constraint firstItem="cVJ-sW-5o0" firstAttribute="leading" secondItem="dVp-oi-4PJ" secondAttribute="leading" constant="10" id="Sld-eS-ItB"/>
+                                            <constraint firstItem="ZHb-YK-bvM" firstAttribute="bottom" secondItem="cVJ-sW-5o0" secondAttribute="bottom" id="bBs-os-lhp"/>
                                             <constraint firstItem="cVJ-sW-5o0" firstAttribute="top" secondItem="JyJ-pz-VhL" secondAttribute="bottom" constant="10" id="dEc-Cj-2zO"/>
                                             <constraint firstItem="JyJ-pz-VhL" firstAttribute="leading" secondItem="dVp-oi-4PJ" secondAttribute="leading" constant="10" id="gCW-kP-7HP"/>
                                             <constraint firstAttribute="height" constant="80" id="md5-te-T9r"/>
