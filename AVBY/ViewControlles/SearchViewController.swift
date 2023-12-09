@@ -21,8 +21,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
         
         let namesCar = nameCar[indexPath.row]
+        let detail = imageCar[indexPath.row]
         
         cell.nameCarLabel.text = namesCar
+        cell.configure(photos: detail)
         
         return cell
     }

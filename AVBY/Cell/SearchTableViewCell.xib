@@ -50,8 +50,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="Jdl-cp-5RS"/>
                                                     <constraint firstAttribute="width" constant="30" id="ZhL-bQ-KvC"/>
                                                 </constraints>
+                                                <color key="tintColor" systemColor="systemGrayColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVn-fU-xbU">
                                                 <rect key="frame" x="485" y="10" width="30" height="30"/>
@@ -59,6 +60,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="Hdz-X5-LQ6"/>
                                                     <constraint firstAttribute="width" constant="30" id="TmM-Dg-uR2"/>
                                                 </constraints>
+                                                <color key="tintColor" systemColor="systemGrayColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>
                                             </button>
@@ -275,14 +277,19 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="conteinerView" destination="gFx-Fn-xlb" id="0xC-8V-LgI"/>
+                <outlet property="dpriceCarLabel" destination="ZHb-YK-bvM" id="XpQ-sS-xiC"/>
+                <outlet property="infoCarLabel" destination="5a6-y7-Wr4" id="ByS-ca-lTG"/>
+                <outlet property="locationCarLabel" destination="GJK-eK-wgD" id="Zey-JR-j55"/>
                 <outlet property="nameCarLabel" destination="JyJ-pz-VhL" id="VIR-TQ-e1f"/>
+                <outlet property="photoCollectionView" destination="kfS-PJ-DeZ" id="DLI-IR-1S6"/>
+                <outlet property="priceCarLabel" destination="cVJ-sW-5o0" id="FGF-ZO-4oM"/>
             </connections>
             <point key="canvasLocation" x="298.47328244274809" y="127.46478873239437"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="bookmark" catalog="system" width="110" height="128"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -295,6 +302,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

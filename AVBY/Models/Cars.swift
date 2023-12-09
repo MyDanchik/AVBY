@@ -4,38 +4,63 @@ struct Car {
     let price: String
     let info: String
     let location: String
-    //let image: [UIImage]
+    let image: [UIImage]
 }
 
 
 private let car1 = Car(name: "Audi A4 B9 · Рестайлинг",
                        price: "102106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
-                       location: "Минск, опубликовано 6 октября")
+                       location: "Минск, опубликовано 6 октября",
+                       image: [
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                       ])
 
 
 private let car2 = Car(name: "Audi A4 B9 · Рестайлинг",
                        price: "102106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
-                       location: "Минск, опубликовано 6 октября")
+                       location: "Минск, опубликовано 6 октября",
+                       image: [
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                       ])
 
 
 private let car3 = Car(name: "Audi A4 B9 · Рестайлинг",
                        price: "102106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
-                       location: "Минск, опубликовано 6 октября")
+                       location: "Минск, опубликовано 6 октября",
+                       image: [
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                       ])
 
 
 private let car4 = Car(name: "Audi A4 B9 · Рестайлинг",
                        price: "102106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
-                       location: "Минск, опубликовано 6 октября")
+                       location: "Минск, опубликовано 6 октября",
+                       image: [
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                       ])
 
 
 private let car5 = Car(name: "Audi A4 B9 · Рестайлинг",
                        price: "102106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
-                       location: "Минск, опубликовано 6 октября")
+                       location: "Минск, опубликовано 6 октября",
+                       image: [
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                        UIImage(named: "1")!,
+                       ])
 
 
 let infoCar : [String] = [
@@ -67,4 +92,11 @@ let priceCar: [String] = [
     car3.price,
     car4.price,
     car5.price
+]
+let imageCar = [
+    car1.image,
+    car2.image,
+    car3.image,
+    car4.image,
+    car5.image
 ]
