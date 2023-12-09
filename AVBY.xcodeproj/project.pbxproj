@@ -16,8 +16,8 @@
 		1926113A2B20B835000376E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192611392B20B835000376E0 /* SearchViewController.swift */; };
 		1926113E2B20B8D1000376E0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926113C2B20B8D1000376E0 /* SearchTableViewCell.swift */; };
 		1926113F2B20B8D1000376E0 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1926113D2B20B8D1000376E0 /* SearchTableViewCell.xib */; };
-		19C4B2E22B24E4CF00A6F217 /* IconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C4B2E02B24E4CF00A6F217 /* IconCollectionViewCell.xib */; };
 		19C4B2E32B24E4CF00A6F217 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B2E12B24E4CF00A6F217 /* IconCollectionViewCell.swift */; };
+		19C4B2E92B2500A300A6F217 /* IconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C4B2E82B2500A300A6F217 /* IconCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		192611392B20B835000376E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1926113C2B20B8D1000376E0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		1926113D2B20B8D1000376E0 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
-		19C4B2E02B24E4CF00A6F217 /* IconCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconCollectionViewCell.xib; sourceTree = "<group>"; };
 		19C4B2E12B24E4CF00A6F217 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		19C4B2E82B2500A300A6F217 /* IconCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			children = (
 				190E83732B19EDCE00F2742A /* Main.storyboard */,
 				190E83782B19EDCF00F2742A /* LaunchScreen.storyboard */,
-				19C4B2E02B24E4CF00A6F217 /* IconCollectionViewCell.xib */,
+				19C4B2E82B2500A300A6F217 /* IconCollectionViewCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C4B2E22B24E4CF00A6F217 /* IconCollectionViewCell.xib in Resources */,
+				19C4B2E92B2500A300A6F217 /* IconCollectionViewCell.xib in Resources */,
 				190E837A2B19EDCF00F2742A /* LaunchScreen.storyboard in Resources */,
 				1926113F2B20B8D1000376E0 /* SearchTableViewCell.xib in Resources */,
 				190E83772B19EDCF00F2742A /* Assets.xcassets in Resources */,
