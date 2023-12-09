@@ -49,10 +49,10 @@ class SearchTableViewCell: UITableViewCell {
         dpriceCarLabel.font =  UIFont.systemFont(ofSize: 17)
         
         infoCarLabel.textColor = UIColor.black
-        infoCarLabel.font =  UIFont.systemFont(ofSize: 17)
+        infoCarLabel.font =  UIFont.systemFont(ofSize: 14)
         
         locationCarLabel.textColor = UIColor.darkGray
-        locationCarLabel.font =  UIFont.systemFont(ofSize: 15)
+        locationCarLabel.font =  UIFont.systemFont(ofSize: 12)
     }
 }
 
@@ -85,7 +85,7 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let image = photos[indexPath.item]
         
-        let targetSize = CGSize(width: collectionView.frame.width / 1 - 15, height: collectionView.frame.width / 2 - 15)
+        let targetSize = CGSize(width: collectionView.frame.width / 1 - 15, height: collectionView.frame.width / 1 - 140)
         
         let scaledSize = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: targetSize)).size
         

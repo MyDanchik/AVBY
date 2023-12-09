@@ -24,6 +24,7 @@ private let car2 = Car(name: "Audi A4 B9 · Рестайлинг",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
                        location: "г.Минск2",
                        image: [
+                        UIImage(named: "2")!,
                         UIImage(named: "1")!,
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
