@@ -6,6 +6,6 @@ class IconCollectionViewCell: UICollectionViewCell {
     
     func setImage(_ image: UIImage) {
         iconImageView.image = image
-        iconImageView.layer.cornerRadius = 10
+        //iconImageView.layer.cornerRadius = 0
     }
 }
