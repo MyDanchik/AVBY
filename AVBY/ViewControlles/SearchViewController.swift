@@ -1,16 +1,53 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var paramButton: UIButton!
+    
+    @IBOutlet weak var searchParamButton: UIButton!
+        
+    @IBOutlet weak var buttonParamView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
-        
+        navigationItem.title = "\(nameCar.count) объявлений"
+        navigationItem.largeTitleDisplayMode = .never
+        tabBarController?.tabBar.isTranslucent = false
+        tabBarController?.tabBar.barTintColor = .white
+        buttonParamView.backgroundColor = .clear
+    }
+    
+    //появление и скрытие кнопок
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let hideButtonOffset: CGFloat = 50
+        let animationDuration: TimeInterval = 0.3
+
+        if offset < hideButtonOffset && buttonParamView.alpha == 0 {
+            buttonParamView.isHidden = false
+
+            UIView.animate(
+                withDuration: animationDuration,
+                animations: {
+                    self.buttonParamView.alpha = 1.0
+                }
+            )
+        } else if offset >= hideButtonOffset && buttonParamView.alpha != 0 {
+            UIView.animate(
+                withDuration: animationDuration,
+                animations: {
+                    self.buttonParamView.alpha = 0.0
+                },
+                completion: { _ in
+                    self.buttonParamView.isHidden = true
+                }
+            )
+        }
     }
 }
 

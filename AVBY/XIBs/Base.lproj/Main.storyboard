@@ -76,12 +76,48 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLj-FO-bbK">
+                                <rect key="frame" x="84" y="709" width="225" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G47-vx-SlK">
+                                        <rect key="frame" x="65" y="0.0" width="160" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Tmu-F4-9BL"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="slider.horizontal.3" catalog="system" title="Параметры"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx8-dT-QBd">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="LiE-uU-YvE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="sparkle.magnifyingglass" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="G47-vx-SlK" firstAttribute="top" secondItem="xLj-FO-bbK" secondAttribute="top" id="9qV-6A-sp4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tx8-dT-QBd" secondAttribute="bottom" id="CU5-XR-qYY"/>
+                                    <constraint firstItem="Tx8-dT-QBd" firstAttribute="centerY" secondItem="xLj-FO-bbK" secondAttribute="centerY" id="DHJ-RK-VsZ"/>
+                                    <constraint firstAttribute="width" constant="225" id="E5J-8k-n8m"/>
+                                    <constraint firstAttribute="trailing" secondItem="G47-vx-SlK" secondAttribute="trailing" id="PGc-Jj-NhX"/>
+                                    <constraint firstAttribute="bottom" secondItem="G47-vx-SlK" secondAttribute="bottom" id="TJ2-JC-lTb"/>
+                                    <constraint firstItem="Tx8-dT-QBd" firstAttribute="top" secondItem="xLj-FO-bbK" secondAttribute="top" id="bab-XI-OMg"/>
+                                    <constraint firstItem="G47-vx-SlK" firstAttribute="centerY" secondItem="xLj-FO-bbK" secondAttribute="centerY" id="gab-FQ-Xhy"/>
+                                    <constraint firstAttribute="height" constant="45" id="hbE-Nz-ebH"/>
+                                    <constraint firstItem="Tx8-dT-QBd" firstAttribute="leading" secondItem="xLj-FO-bbK" secondAttribute="leading" id="xQe-8L-JYM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mhm-dL-Z5k"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kji-eo-qUo" firstAttribute="top" secondItem="Mhm-dL-Z5k" secondAttribute="top" id="FUM-j2-LYo"/>
+                            <constraint firstItem="xLj-FO-bbK" firstAttribute="centerX" secondItem="0bk-mc-H3g" secondAttribute="centerX" id="KBv-ft-9cE"/>
                             <constraint firstItem="kji-eo-qUo" firstAttribute="leading" secondItem="Mhm-dL-Z5k" secondAttribute="leading" id="Kxk-iU-dAN"/>
+                            <constraint firstItem="Mhm-dL-Z5k" firstAttribute="bottom" secondItem="xLj-FO-bbK" secondAttribute="bottom" constant="15" id="Pzy-4M-2eB"/>
                             <constraint firstItem="Mhm-dL-Z5k" firstAttribute="trailing" secondItem="kji-eo-qUo" secondAttribute="trailing" id="hRg-BG-INc"/>
                             <constraint firstItem="Mhm-dL-Z5k" firstAttribute="bottom" secondItem="kji-eo-qUo" secondAttribute="bottom" id="rAH-Ce-tW2"/>
                         </constraints>
@@ -89,6 +125,9 @@
                     <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="e6S-au-T7G"/>
                     <navigationItem key="navigationItem" style="editor" id="1Yt-fa-AO0"/>
                     <connections>
+                        <outlet property="buttonParamView" destination="xLj-FO-bbK" id="A9I-T6-nxa"/>
+                        <outlet property="paramButton" destination="G47-vx-SlK" id="hKF-Mb-bHZ"/>
+                        <outlet property="searchParamButton" destination="Tx8-dT-QBd" id="HZy-nI-oz5"/>
                         <outlet property="tableView" destination="kji-eo-qUo" id="3aA-ec-IaF"/>
                     </connections>
                 </viewController>
@@ -131,7 +170,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6JS-US-EHr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="pya-wi-zRp" kind="relationship" relationship="viewControllers" id="h7m-WO-kj7"/>
@@ -199,6 +238,8 @@
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <image name="sparkle.magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
