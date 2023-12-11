@@ -334,8 +334,12 @@
                 <outlet property="photoCollectionView" destination="kfS-PJ-DeZ" id="DLI-IR-1S6"/>
                 <outlet property="priceCarLabel" destination="cVJ-sW-5o0" id="FGF-ZO-4oM"/>
                 <outlet property="topCarView" destination="QU4-WO-hx4" id="a45-ta-fki"/>
+                <outlet property="topImage" destination="gRU-gR-nqn" id="zU8-bk-PVZ"/>
+                <outlet property="topLabel" destination="6eD-qJ-hEG" id="fhv-8D-G5O"/>
                 <outlet property="topvinCarView" destination="q3k-sK-vjX" id="cl8-dz-gta"/>
                 <outlet property="vinCarView" destination="IOG-rH-iTe" id="lgB-nN-03C"/>
+                <outlet property="vinImage" destination="kQ5-xP-T1J" id="0of-GP-TzB"/>
+                <outlet property="vinLabel" destination="HKm-lD-ZrI" id="GgT-4D-aWW"/>
             </connections>
             <point key="canvasLocation" x="298.47328244274809" y="134.85915492957747"/>
         </tableViewCell>

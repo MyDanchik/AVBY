@@ -27,6 +27,14 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var leaseСalculationButton: UIButton!
     
+    
+    @IBOutlet weak var topImage: UIImageView!
+    @IBOutlet weak var topLabel: UILabel!
+    
+    @IBOutlet weak var vinImage: UIImageView!
+    @IBOutlet weak var vinLabel: UILabel!
+    
+    
     private var photos = [UIImage]()
     func configure(photos: [UIImage]) {
         self.photos = photos
@@ -42,14 +50,13 @@ class SearchTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         textEdit()
+        topvinEdit()
         
         if let layout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.minimumInteritemSpacing = 3
             layout.minimumLineSpacing = 0
         }
     }
-    
-    
     
     func configure(carTop: Bool, winCar: Bool) {
         updateViewVisibility(carTop: carTop, winCar: winCar)
@@ -80,6 +87,27 @@ class SearchTableViewCell: UITableViewCell {
         
         locationCarLabel.textColor = UIColor.darkGray
         locationCarLabel.font =  UIFont.systemFont(ofSize: 12)
+    }
+    
+    private func topvinEdit() {
+        
+        let boldConfiguration = UIImage.SymbolConfiguration(weight: .bold)
+        
+        topCarView.backgroundColor = .yellow
+        vinCarView.backgroundColor = .systemGreen
+        
+        topImage.image = UIImage(systemName: "star.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        vinImage.image = UIImage(systemName: "checkmark", withConfiguration: boldConfiguration)?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        
+        topLabel.text = "ТОП"
+        vinLabel.text = "VIN"
+        
+        topLabel.font =  UIFont.boldSystemFont(ofSize: 10)
+        vinLabel.font =  UIFont.boldSystemFont(ofSize: 10)
+        
+        topLabel.textColor = UIColor.black
+        vinLabel.textColor = UIColor.white
+        
     }
 }
 
