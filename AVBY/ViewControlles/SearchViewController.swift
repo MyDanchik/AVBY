@@ -27,13 +27,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let formatPrice = String(format: "%.0f" + " $", dpricesCar)
         let infosCar = infoCar[indexPath.row]
         let locationsCar = locationCar[indexPath.row]
+        let carTop = topCar[indexPath.row]
+        let carWin = winCar[indexPath.row]
         
+                    
         cell.nameCarLabel.text = namesCar
         cell.configure(photos: detail)
         cell.priceCarLabel.text = "\(pricesCar) р."
         cell.dpriceCarLabel.text = "≈ \(formatPrice)"
         cell.infoCarLabel.text = infosCar
         cell.locationCarLabel.text = locationsCar
+        cell.configure(carTop: carTop, winCar: carWin)
         
         return cell
     }

@@ -17,6 +17,12 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var locationCarLabel: UILabel!
     
+    @IBOutlet weak var topwinCarView: UIView!
+    
+    @IBOutlet weak var topCarView: UIView!
+    
+    @IBOutlet weak var winCarView: UIView!
+    
     private var photos = [UIImage]()
     func configure(photos: [UIImage]) {
         self.photos = photos
@@ -36,6 +42,17 @@ class SearchTableViewCell: UITableViewCell {
             layout.minimumInteritemSpacing = 3
             layout.minimumLineSpacing = 0
         }
+    }
+    
+    func configure(carTop: Bool, winCar: Bool) {
+        updateViewVisibility(carTop: carTop, winCar: winCar)
+        
+    }
+    
+    private func updateViewVisibility(carTop: Bool, winCar: Bool) {
+        topCarView.isHidden = !carTop
+        winCarView.isHidden = !winCar
+        topwinCarView.isHidden = !(carTop || winCar)
     }
     
     private func textEdit() {
@@ -63,7 +80,7 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let iconCell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: "IconCollectionViewCell", for: indexPath) as? IconCollectionViewCell {
             iconCell.setImage(photos[indexPath.row])
-    
+            
             if indexPath.item == 0 {
                 iconCell.setCornerRadiusFirst(5)
             } else if indexPath.item == photos.count - 1 {

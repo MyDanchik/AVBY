@@ -5,6 +5,8 @@ struct Car {
     let info: String
     let location: String
     let image: [UIImage]
+    var top: Bool
+    var win: Bool
 }
 
 
@@ -16,7 +18,9 @@ private let car1 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
-                       ])
+                       ],
+                       top: false,
+                       win: false)
 
 
 private let car2 = Car(name: "Audi A4 B9 · Рестайлинг",
@@ -28,7 +32,9 @@ private let car2 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
-                       ])
+                       ],
+                       top: false,
+                       win: true)
 
 
 private let car3 = Car(name: "Audi A4 B9 · Рестайлинг",
@@ -39,7 +45,9 @@ private let car3 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
-                       ])
+                       ],
+                       top: true,
+                       win: false)
 
 
 private let car4 = Car(name: "Audi A4 B9 · Рестайлинг",
@@ -50,7 +58,9 @@ private let car4 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
-                       ])
+                       ],
+                       top: false,
+                       win: true)
 
 
 private let car5 = Car(name: "Audi A4 B9 · Рестайлинг",
@@ -61,7 +71,9 @@ private let car5 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
-                       ])
+                       ],
+                       top: true,
+                       win: false)
 
 
 let infoCar : [String] = [
@@ -100,4 +112,20 @@ let imageCar = [
     car3.image,
     car4.image,
     car5.image
+]
+
+var topCar = [
+    car1.top,
+    car2.top,
+    car3.top,
+    car4.top,
+    car5.top
+]
+
+var winCar = [
+    car1.win,
+    car2.win,
+    car3.win,
+    car4.win,
+    car5.win
 ]
