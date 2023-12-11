@@ -28,10 +28,14 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var leaseСalculationButton: UIButton!
     
     
+    @IBOutlet weak var lineView: UIView!
+    
     @IBOutlet weak var topImage: UIImageView!
+    
     @IBOutlet weak var topLabel: UILabel!
     
     @IBOutlet weak var vinImage: UIImageView!
+    
     @IBOutlet weak var vinLabel: UILabel!
     
     
@@ -44,6 +48,8 @@ class SearchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         conteinerView.layer.cornerRadius = 10
+        lineView.backgroundColor = UIColor.systemGray2
+        
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
         photoCollectionView.register(UINib(nibName: "IconCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "IconCollectionViewCell")
@@ -69,9 +75,6 @@ class SearchTableViewCell: UITableViewCell {
         vinCarView.isHidden = !winCar
         topvinCarView.isHidden = !(carTop || winCar)
     }
-    
-    
-    
     
     private func textEdit() {
         nameCarLabel.textColor = UIColor.black

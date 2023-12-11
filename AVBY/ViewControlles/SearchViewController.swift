@@ -7,8 +7,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var paramButton: UIButton!
     
     @IBOutlet weak var searchParamButton: UIButton!
-        
+    
     @IBOutlet weak var buttonParamView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -20,6 +21,28 @@ class SearchViewController: UIViewController {
         tabBarController?.tabBar.isTranslucent = false
         tabBarController?.tabBar.barTintColor = .white
         buttonParamView.backgroundColor = .clear
+        paramButtonEdit()
+    }
+    
+    func paramButtonEdit() {
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium)
+        
+        let sfSlider = UIImage(systemName: "slider.horizontal.3", withConfiguration: symbolConfiguration)
+        paramButton.setImage(sfSlider, for: .normal)
+        paramButton.tintColor = UIColor.white
+        paramButton.layer.cornerRadius = 8
+        paramButton.backgroundColor = UIColor.systemBlue
+        paramButton.setTitleColor(UIColor.white, for: .normal)
+        paramButton.setTitle("  Параметры", for: .normal)
+        paramButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        let sfGlass = UIImage(systemName: "sparkle.magnifyingglass", withConfiguration: symbolConfiguration)
+        searchParamButton.setImage(sfGlass, for: .normal)
+        searchParamButton.tintColor = UIColor.white
+        searchParamButton.layer.cornerRadius = 8
+        searchParamButton.backgroundColor = UIColor.systemBlue
+        searchParamButton.setTitleColor(UIColor.white, for: .normal)
+        searchParamButton.setTitle("", for: .normal)
     }
     
     //появление и скрытие кнопок
@@ -27,10 +50,10 @@ class SearchViewController: UIViewController {
         let offset = scrollView.contentOffset.y
         let hideButtonOffset: CGFloat = 50
         let animationDuration: TimeInterval = 0.3
-
+        
         if offset < hideButtonOffset && buttonParamView.alpha == 0 {
             buttonParamView.isHidden = false
-
+            
             UIView.animate(
                 withDuration: animationDuration,
                 animations: {
@@ -68,7 +91,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let carWin = vinCar[indexPath.row]
         let leasing = (Double(pricesCar)! / 3.2) / 60 //лизинг на 5 лет
         let formatLeasing = String(format: "%.0f", leasing)
-        
         
         cell.leaseСalculationButton.setTitle("от \(formatLeasing) USD/месяц", for: .normal)
         cell.leasingButton.setTitle("Лизинг", for: .normal)

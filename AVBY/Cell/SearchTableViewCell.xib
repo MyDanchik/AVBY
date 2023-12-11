@@ -329,6 +329,7 @@
                 <outlet property="infoCarLabel" destination="5a6-y7-Wr4" id="ByS-ca-lTG"/>
                 <outlet property="leaseСalculationButton" destination="kmf-qY-EzF" id="zGz-cf-yVq"/>
                 <outlet property="leasingButton" destination="HZd-pc-lqZ" id="i4v-jW-H70"/>
+                <outlet property="lineView" destination="rOw-8V-ppE" id="N1V-Lp-7va"/>
                 <outlet property="locationCarLabel" destination="GJK-eK-wgD" id="Zey-JR-j55"/>
                 <outlet property="nameCarLabel" destination="JyJ-pz-VhL" id="VIR-TQ-e1f"/>
                 <outlet property="photoCollectionView" destination="kfS-PJ-DeZ" id="DLI-IR-1S6"/>
