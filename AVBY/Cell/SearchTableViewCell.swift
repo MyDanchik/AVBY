@@ -51,6 +51,7 @@ class SearchTableViewCell: UITableViewCell {
         
         textEdit()
         topvinEdit()
+        leasingEdit()
         
         if let layout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.minimumInteritemSpacing = 3
@@ -108,6 +109,15 @@ class SearchTableViewCell: UITableViewCell {
         topLabel.textColor = UIColor.black
         vinLabel.textColor = UIColor.white
         
+    }
+    
+    private func leasingEdit() {
+        
+        leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        
+        leasingButton.setTitleColor(UIColor.systemBlue, for: .normal)
+        leaseСalculationButton.setTitleColor(UIColor.systemBlue, for: .normal)
     }
 }
 
