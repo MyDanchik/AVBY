@@ -28,9 +28,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let infosCar = infoCar[indexPath.row]
         let locationsCar = locationCar[indexPath.row]
         let carTop = topCar[indexPath.row]
-        let carWin = winCar[indexPath.row]
+        let carWin = vinCar[indexPath.row]
+        let leasing = (Double(pricesCar)! / 3.2) / 60 //лизинг на 5 лет
+        let formatLeasing = String(format: "%.0f", leasing)
         
-                    
+        
+        cell.leaseСalculationButton.setTitle("от \(formatLeasing) USD/месяц", for: .normal)
+        cell.leasingButton.setTitle("Лизинг", for: .normal)
         cell.nameCarLabel.text = namesCar
         cell.configure(photos: detail)
         cell.priceCarLabel.text = "\(pricesCar) р."

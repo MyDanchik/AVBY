@@ -17,11 +17,15 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var locationCarLabel: UILabel!
     
-    @IBOutlet weak var topwinCarView: UIView!
+    @IBOutlet weak var topvinCarView: UIView!
     
     @IBOutlet weak var topCarView: UIView!
     
-    @IBOutlet weak var winCarView: UIView!
+    @IBOutlet weak var vinCarView: UIView!
+    
+    @IBOutlet weak var leasingButton: UIButton!
+    
+    @IBOutlet weak var leaseСalculationButton: UIButton!
     
     private var photos = [UIImage]()
     func configure(photos: [UIImage]) {
@@ -36,6 +40,7 @@ class SearchTableViewCell: UITableViewCell {
         photoCollectionView.dataSource = self
         photoCollectionView.register(UINib(nibName: "IconCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "IconCollectionViewCell")
         selectionStyle = .none
+        
         textEdit()
         
         if let layout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -44,6 +49,8 @@ class SearchTableViewCell: UITableViewCell {
         }
     }
     
+    
+    
     func configure(carTop: Bool, winCar: Bool) {
         updateViewVisibility(carTop: carTop, winCar: winCar)
         
@@ -51,9 +58,12 @@ class SearchTableViewCell: UITableViewCell {
     
     private func updateViewVisibility(carTop: Bool, winCar: Bool) {
         topCarView.isHidden = !carTop
-        winCarView.isHidden = !winCar
-        topwinCarView.isHidden = !(carTop || winCar)
+        vinCarView.isHidden = !winCar
+        topvinCarView.isHidden = !(carTop || winCar)
     }
+    
+    
+    
     
     private func textEdit() {
         nameCarLabel.textColor = UIColor.black
@@ -110,7 +120,7 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     }
     
     

@@ -6,7 +6,7 @@ struct Car {
     let location: String
     let image: [UIImage]
     var top: Bool
-    var win: Bool
+    var vin: Bool
 }
 
 
@@ -19,12 +19,12 @@ private let car1 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
                        ],
-                       top: false,
-                       win: false)
+                       top: true,
+                       vin: true)
 
 
 private let car2 = Car(name: "Audi A4 B9 · Рестайлинг",
-                       price: "102106",
+                       price: "202106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
                        location: "г.Минск2",
                        image: [
@@ -33,12 +33,12 @@ private let car2 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "2")!,
                         UIImage(named: "1")!,
                        ],
-                       top: false,
-                       win: true)
+                       top: true,
+                       vin: false)
 
 
 private let car3 = Car(name: "Audi A4 B9 · Рестайлинг",
-                       price: "102106",
+                       price: "302106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
                        location: "г.Минск3",
                        image: [
@@ -47,11 +47,11 @@ private let car3 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                        ],
                        top: true,
-                       win: false)
+                       vin: false)
 
 
 private let car4 = Car(name: "Audi A4 B9 · Рестайлинг",
-                       price: "102106",
+                       price: "402106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
                        location: "г.Минск4",
                        image: [
@@ -60,11 +60,11 @@ private let car4 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                        ],
                        top: false,
-                       win: true)
+                       vin: false)
 
 
 private let car5 = Car(name: "Audi A4 B9 · Рестайлинг",
-                       price: "102106",
+                       price: "502106",
                        info: "2021 г., робот, 2.0 л, бензин, 91 000 км, седан, полный привод, серый",
                        location: "г.Минск5",
                        image: [
@@ -73,7 +73,7 @@ private let car5 = Car(name: "Audi A4 B9 · Рестайлинг",
                         UIImage(named: "1")!,
                        ],
                        top: true,
-                       win: false)
+                       vin: false)
 
 
 let infoCar : [String] = [
@@ -122,10 +122,10 @@ var topCar = [
     car5.top
 ]
 
-var winCar = [
-    car1.win,
-    car2.win,
-    car3.win,
-    car4.win,
-    car5.win
+var vinCar = [
+    car1.vin,
+    car2.vin,
+    car3.vin,
+    car4.vin,
+    car5.vin
 ]
