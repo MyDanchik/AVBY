@@ -27,7 +27,6 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var leaseСalculationButton: UIButton!
     
-    
     @IBOutlet weak var lineView: UIView!
     
     @IBOutlet weak var topImage: UIImageView!
@@ -87,7 +86,7 @@ class SearchTableViewCell: UITableViewCell {
         priceCarLabel.font = UIFont.boldSystemFont(ofSize: 25)
         
         dpriceCarLabel.textColor = UIColor.subtitle
-        dpriceCarLabel.font =  UIFont.systemFont(ofSize: 17)
+        dpriceCarLabel.font =  UIFont.systemFont(ofSize: 15)
         
         infoCarLabel.textColor = UIColor.title
         infoCarLabel.font =  UIFont.systemFont(ofSize: 14)
