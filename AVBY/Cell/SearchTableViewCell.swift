@@ -48,11 +48,14 @@ class SearchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         conteinerView.layer.cornerRadius = 10
-        lineView.backgroundColor = UIColor.systemGray2
+        conteinerView.backgroundColor = .backgroundCell
+        lineView.backgroundColor = UIColor.separate
         
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
+        photoCollectionView.backgroundColor = .backgroundCell
         photoCollectionView.register(UINib(nibName: "IconCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "IconCollectionViewCell")
+        
         selectionStyle = .none
         
         textEdit()
@@ -77,19 +80,19 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     private func textEdit() {
-        nameCarLabel.textColor = UIColor.black
+        nameCarLabel.textColor = UIColor.title
         nameCarLabel.font =  UIFont.systemFont(ofSize: 18)
         
-        priceCarLabel.textColor = UIColor.black
+        priceCarLabel.textColor = UIColor.title
         priceCarLabel.font = UIFont.boldSystemFont(ofSize: 25)
         
-        dpriceCarLabel.textColor = UIColor.darkGray
+        dpriceCarLabel.textColor = UIColor.subtitle
         dpriceCarLabel.font =  UIFont.systemFont(ofSize: 17)
         
-        infoCarLabel.textColor = UIColor.black
+        infoCarLabel.textColor = UIColor.title
         infoCarLabel.font =  UIFont.systemFont(ofSize: 14)
         
-        locationCarLabel.textColor = UIColor.darkGray
+        locationCarLabel.textColor = UIColor.subtitle
         locationCarLabel.font =  UIFont.systemFont(ofSize: 12)
     }
     
@@ -97,8 +100,11 @@ class SearchTableViewCell: UITableViewCell {
         
         let boldConfiguration = UIImage.SymbolConfiguration(weight: .bold)
         
-        topCarView.backgroundColor = .yellow
-        vinCarView.backgroundColor = .systemGreen
+        topCarView.backgroundColor = .top
+        vinCarView.backgroundColor = .vin
+        
+        topCarView.layer.cornerRadius = 2.5
+        vinCarView.layer.cornerRadius = 2.5
         
         topImage.image = UIImage(systemName: "star.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         vinImage.image = UIImage(systemName: "checkmark", withConfiguration: boldConfiguration)?.withTintColor(.white, renderingMode: .alwaysOriginal)
@@ -112,6 +118,8 @@ class SearchTableViewCell: UITableViewCell {
         topLabel.textColor = UIColor.black
         vinLabel.textColor = UIColor.white
         
+        
+        
     }
     
     private func leasingEdit() {
@@ -119,8 +127,8 @@ class SearchTableViewCell: UITableViewCell {
         leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         
-        leasingButton.setTitleColor(UIColor.systemBlue, for: .normal)
-        leaseСalculationButton.setTitleColor(UIColor.systemBlue, for: .normal)
+        leasingButton.setTitleColor(UIColor.buttonText, for: .normal)
+        leaseСalculationButton.setTitleColor(UIColor.buttonText, for: .normal)
     }
 }
 

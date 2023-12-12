@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,7 +52,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="Jdl-cp-5RS"/>
                                                     <constraint firstAttribute="width" constant="30" id="ZhL-bQ-KvC"/>
                                                 </constraints>
-                                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                                <color key="tintColor" name="icon"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
                                             </button>
@@ -61,12 +62,12 @@
                                                     <constraint firstAttribute="height" constant="30" id="Hdz-X5-LQ6"/>
                                                     <constraint firstAttribute="width" constant="30" id="TmM-Dg-uR2"/>
                                                 </constraints>
-                                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                                <color key="tintColor" name="icon"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="gVn-fU-xbU" firstAttribute="leading" secondItem="ayD-YN-CYR" secondAttribute="trailing" constant="10" id="2IR-94-DaK"/>
                                             <constraint firstItem="ZHb-YK-bvM" firstAttribute="leading" secondItem="cVJ-sW-5o0" secondAttribute="trailing" constant="5" id="Bgk-mr-pEw"/>
@@ -100,7 +101,7 @@
                                                 </collectionViewFlowLayout>
                                             </collectionView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kfS-PJ-DeZ" secondAttribute="trailing" id="JEy-Pb-hE1"/>
                                             <constraint firstItem="kfS-PJ-DeZ" firstAttribute="top" secondItem="ZfC-2N-xbz" secondAttribute="top" id="NeK-Sm-SdO"/>
@@ -122,7 +123,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="5a6-y7-Wr4" secondAttribute="trailing" constant="10" id="54f-To-e8x"/>
                                                     <constraint firstItem="5a6-y7-Wr4" firstAttribute="top" secondItem="abs-Mx-ZyC" secondAttribute="top" constant="10" id="Mib-0p-gJp"/>
@@ -208,7 +209,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="GJK-eK-wgD" firstAttribute="top" secondItem="Edi-2M-Akv" secondAttribute="top" constant="5" id="8CV-qM-KF5"/>
                                                     <constraint firstItem="GJK-eK-wgD" firstAttribute="leading" secondItem="Edi-2M-Akv" secondAttribute="leading" constant="10" id="Ccn-dw-98s"/>
@@ -216,7 +217,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="abs-Mx-ZyC" firstAttribute="top" secondItem="tcW-QB-2Wr" secondAttribute="top" id="0iY-jQ-Kxp"/>
                                             <constraint firstItem="abs-Mx-ZyC" firstAttribute="leading" secondItem="tcW-QB-2Wr" secondAttribute="leading" id="8Iz-Kl-R2b"/>
@@ -235,7 +236,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="rOw-8V-ppE" firstAttribute="leading" secondItem="o32-wv-Nw3" secondAttribute="leading" constant="5" id="Brp-u7-by6"/>
                                             <constraint firstAttribute="trailing" secondItem="rOw-8V-ppE" secondAttribute="trailing" id="M14-Zh-BED"/>
@@ -257,7 +258,7 @@
                                                 <state key="normal" title="от ... USD/месяц"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="kmf-qY-EzF" firstAttribute="top" secondItem="BT5-ze-w2e" secondAttribute="top" constant="5" id="9MV-Da-AMj"/>
                                             <constraint firstItem="HZd-pc-lqZ" firstAttribute="top" secondItem="BT5-ze-w2e" secondAttribute="top" constant="5" id="FQN-yp-oTj"/>
@@ -297,6 +298,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="tcW-QB-2Wr" secondAttribute="trailing" id="LPr-H4-psK"/>
                                     <constraint firstItem="tcW-QB-2Wr" firstAttribute="top" secondItem="ZfC-2N-xbz" secondAttribute="bottom" id="qB4-P2-KEQ"/>
@@ -314,7 +316,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                <color key="backgroundColor" name="backgroundVC"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="gFx-Fn-xlb" secondAttribute="bottom" id="HU9-hl-tdi"/>
                     <constraint firstAttribute="trailing" secondItem="gFx-Fn-xlb" secondAttribute="trailing" constant="5" id="MAW-ua-GKn"/>
@@ -350,6 +352,12 @@
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="eye" catalog="system" width="128" height="79"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="backgroundVC">
+            <color red="0.90196078431372551" green="0.93333333333333335" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="icon">
+            <color red="0.65098039215686276" green="0.69411764705882351" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -361,12 +369,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

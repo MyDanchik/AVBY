@@ -15,11 +15,14 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .backgroundVC
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
+        
         navigationItem.title = "\(nameCar.count) объявлений"
         navigationItem.largeTitleDisplayMode = .never
         tabBarController?.tabBar.isTranslucent = false
-        tabBarController?.tabBar.barTintColor = .white
+        tabBarController?.tabBar.barTintColor = .tabBar
+        
         buttonParamView.backgroundColor = .clear
         paramButtonEdit()
     }
@@ -31,7 +34,7 @@ class SearchViewController: UIViewController {
         paramButton.setImage(sfSlider, for: .normal)
         paramButton.tintColor = UIColor.white
         paramButton.layer.cornerRadius = 8
-        paramButton.backgroundColor = UIColor.systemBlue
+        paramButton.backgroundColor = UIColor.bottomButton
         paramButton.setTitleColor(UIColor.white, for: .normal)
         paramButton.setTitle("  Параметры", for: .normal)
         paramButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -40,7 +43,7 @@ class SearchViewController: UIViewController {
         searchParamButton.setImage(sfGlass, for: .normal)
         searchParamButton.tintColor = UIColor.white
         searchParamButton.layer.cornerRadius = 8
-        searchParamButton.backgroundColor = UIColor.systemBlue
+        searchParamButton.backgroundColor = UIColor.bottomButton
         searchParamButton.setTitleColor(UIColor.white, for: .normal)
         searchParamButton.setTitle("", for: .normal)
     }
