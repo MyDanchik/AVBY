@@ -229,7 +229,7 @@
                                         <rect key="frame" x="0.0" y="425" width="525" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOw-8V-ppE">
-                                                <rect key="frame" x="5" y="4.6666666666666856" width="520" height="1"/>
+                                                <rect key="frame" x="10" y="4.6666666666666856" width="515" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="LF2-vK-4MK"/>
@@ -238,7 +238,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="rOw-8V-ppE" firstAttribute="leading" secondItem="o32-wv-Nw3" secondAttribute="leading" constant="5" id="Brp-u7-by6"/>
+                                            <constraint firstItem="rOw-8V-ppE" firstAttribute="leading" secondItem="o32-wv-Nw3" secondAttribute="leading" constant="10" id="Brp-u7-by6"/>
                                             <constraint firstAttribute="trailing" secondItem="rOw-8V-ppE" secondAttribute="trailing" id="M14-Zh-BED"/>
                                             <constraint firstAttribute="height" constant="10" id="O69-hd-Uxa"/>
                                             <constraint firstItem="rOw-8V-ppE" firstAttribute="centerY" secondItem="o32-wv-Nw3" secondAttribute="centerY" id="uel-0f-WgK"/>
@@ -335,6 +335,7 @@
                 <outlet property="locationCarLabel" destination="GJK-eK-wgD" id="Zey-JR-j55"/>
                 <outlet property="nameCarLabel" destination="JyJ-pz-VhL" id="VIR-TQ-e1f"/>
                 <outlet property="photoCollectionView" destination="kfS-PJ-DeZ" id="DLI-IR-1S6"/>
+                <outlet property="photoView" destination="ZfC-2N-xbz" id="o1l-F7-Y65"/>
                 <outlet property="priceCarLabel" destination="cVJ-sW-5o0" id="FGF-ZO-4oM"/>
                 <outlet property="topCarView" destination="QU4-WO-hx4" id="a45-ta-fki"/>
                 <outlet property="topImage" destination="gRU-gR-nqn" id="zU8-bk-PVZ"/>
@@ -368,10 +369,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

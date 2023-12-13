@@ -3,52 +3,54 @@ import UIKit
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var paramButton: UIButton!
-    
     @IBOutlet weak var searchParamButton: UIButton!
-    
     @IBOutlet weak var buttonParamView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        setupNavigationBar()
+        setupButtonParamView()
+    }
+    // MARK: - Настройка таблицы
+    
+    func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = .backgroundVC
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
-        
+    }
+    // MARK: - Настройка навигационной панели
+    
+    func setupNavigationBar() {
         navigationItem.title = "\(nameCar.count) объявлений"
         navigationItem.largeTitleDisplayMode = .never
         tabBarController?.tabBar.isTranslucent = false
         tabBarController?.tabBar.barTintColor = .tabBar
-        
+    }
+    // MARK: - Настройка кнопки
+    
+    func setupButton(_ button: UIButton, imageName: String, title: String) {
+        let sfImage = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .medium))
+        button.setImage(sfImage, for: .normal)
+        button.tintColor = .white
+        button.layer.cornerRadius = 8
+        button.backgroundColor = .bottomButton
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+    }
+    // MARK: - Настройка кнопок параметров
+    
+    func setupButtonParamView() {
+        setupButton(paramButton, imageName: "slider.horizontal.3", title: "  Параметры")
+        setupButton(searchParamButton, imageName: "sparkle.magnifyingglass", title: "")
         buttonParamView.backgroundColor = .clear
-        paramButtonEdit()
     }
+    // MARK: - Появление и скрытие кнопок
     
-    func paramButtonEdit() {
-        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium)
-        
-        let sfSlider = UIImage(systemName: "slider.horizontal.3", withConfiguration: symbolConfiguration)
-        paramButton.setImage(sfSlider, for: .normal)
-        paramButton.tintColor = UIColor.white
-        paramButton.layer.cornerRadius = 8
-        paramButton.backgroundColor = UIColor.bottomButton
-        paramButton.setTitleColor(UIColor.white, for: .normal)
-        paramButton.setTitle("  Параметры", for: .normal)
-        paramButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        
-        let sfGlass = UIImage(systemName: "sparkle.magnifyingglass", withConfiguration: symbolConfiguration)
-        searchParamButton.setImage(sfGlass, for: .normal)
-        searchParamButton.tintColor = UIColor.white
-        searchParamButton.layer.cornerRadius = 8
-        searchParamButton.backgroundColor = UIColor.bottomButton
-        searchParamButton.setTitleColor(UIColor.white, for: .normal)
-        searchParamButton.setTitle("", for: .normal)
-    }
-    
-    //появление и скрытие кнопок
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y
         let hideButtonOffset: CGFloat = 50
@@ -76,26 +78,24 @@ class SearchViewController: UIViewController {
         }
     }
 }
-
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
         
         let namesCar = nameCar[indexPath.row]
-        let detail = imageCar[indexPath.row]
+        let imagesCar = imageCar[indexPath.row]
         let pricesCar = priceCar[indexPath.row]
         let dpricesCar = Double(pricesCar)! / 3.2
         let formatPrice = String(format: "%.0f" + " $", dpricesCar)
-        //let infosCar = infoCar[indexPath.row]
         let locationsCar = locationCar[indexPath.row]
         let carTop = topCar[indexPath.row]
         let carWin = vinCar[indexPath.row]
         let leasing = Double(pricesCar)! / 60//лизинг на 5 лет
         let formatLeasing = String(format: "%.0f", leasing)
         let datesCar = dateCar[indexPath.row]
-        
         let yearsCar = yearCar[indexPath.row]
         let gearboxsCar = gearboxCar[indexPath.row]
         let scopesCar = scopeCar[indexPath.row]
@@ -104,36 +104,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let bodyTypesCar = bodyTypeCar[indexPath.row]
         let drivesCar = driveCar[indexPath.row]
         let colorsCar = colorCar[indexPath.row]
-        
-        
-        
-        
         let pricesCarText = "\(pricesCar) р."
-        let attributedPricesText = NSMutableAttributedString(string: pricesCarText)
-        if let range = pricesCarText.range(of: "р.") {
-            let nsRange = NSRange(range, in: pricesCarText)
-            
-            attributedPricesText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 15), range: nsRange)
-        }
-        
+        let attributedPricesText = createAttributedText(for: pricesCarText, highlightingSubstring: "р.", withBoldSystemFont: 15)
         let leasingText = "от \(formatLeasing) BYN/месяц"
-        let attributedLeasingText = NSMutableAttributedString(string: leasingText)
-
-
-        if let range = leasingText.range(of: "\(formatLeasing) BYN") {
-            let nsRange = NSRange(range, in: leasingText)
-            
-            attributedLeasingText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 13), range: nsRange)
-        }
-
-        
-
+        let attributedLeasingText = createAttributedText(for: leasingText, highlightingSubstring: "\(formatLeasing) BYN", withBoldSystemFont: 13)
 
         cell.priceCarLabel.attributedText = attributedPricesText
         cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
         cell.leasingButton.setTitle("Лизинг", for: .normal)
         cell.nameCarLabel.text = namesCar
-        cell.configure(photos: detail)
+        cell.configure(photos: imagesCar)
         cell.dpriceCarLabel.text = "≈ \(formatPrice)"
         cell.infoCarLabel.text = "\(yearsCar), \(gearboxsCar), \(scopesCar), \(engineTypesCar), \(mileagesCar), \(bodyTypesCar), \(drivesCar), \(colorsCar)"
         cell.locationCarLabel.text = "\(locationsCar) · \(datesCar)"
@@ -141,10 +121,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nameCar.count
     }
     
-    
+    func createAttributedText(for text: String, highlightingSubstring substring: String, withBoldSystemFont fontSize: CGFloat) -> NSAttributedString {
+        let attributedText = NSMutableAttributedString(string: text)
+        
+        if let range = text.range(of: substring) {
+            let nsRange = NSRange(range, in: text)
+            attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: fontSize), range: nsRange)
+        }
+        
+        return attributedText
+    }
 }
