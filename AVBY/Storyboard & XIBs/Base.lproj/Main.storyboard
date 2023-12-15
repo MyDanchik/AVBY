@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfY-F9-SRB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfY-F9-SRB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxj-nU-Iea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1531" y="-616"/>
+            <point key="canvasLocation" x="1576" y="-616"/>
         </scene>
         <!--Проечее-->
         <scene sceneID="Bs1-cr-BlH">
@@ -237,6 +237,38 @@
             </objects>
             <point key="canvasLocation" x="969" y="1771"/>
         </scene>
+        <!--Поиск-->
+        <scene sceneID="aqe-WZ-Kjr">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R05-Ms-2On" customClass="DetailsViewController" customModule="AVBY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AqR-Pb-0ES">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0O2-jy-MtP">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" name="backgroundVC"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KTG-mZ-qPU"/>
+                        <color key="backgroundColor" name="backgroundCell"/>
+                        <constraints>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="bottom" secondItem="0O2-jy-MtP" secondAttribute="bottom" id="0A5-M8-dC3"/>
+                            <constraint firstItem="0O2-jy-MtP" firstAttribute="top" secondItem="KTG-mZ-qPU" secondAttribute="top" id="MVk-zV-tyR"/>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="trailing" secondItem="0O2-jy-MtP" secondAttribute="trailing" id="T2a-2P-mzH"/>
+                            <constraint firstItem="0O2-jy-MtP" firstAttribute="leading" secondItem="KTG-mZ-qPU" secondAttribute="leading" id="VIr-Vf-trP"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="g6N-cJ-glK"/>
+                    <navigationItem key="navigationItem" style="editor" id="0IH-de-jbF"/>
+                    <connections>
+                        <outlet property="tableView" destination="0O2-jy-MtP" id="d1V-uo-SYM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0w-pf-6Ke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2398" y="-616"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
@@ -259,7 +291,7 @@
             <color red="0.24705882352941178" green="0.55686274509803924" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

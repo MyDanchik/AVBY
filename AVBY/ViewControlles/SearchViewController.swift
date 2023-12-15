@@ -118,7 +118,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.infoCarLabel.text = "\(yearsCar), \(gearboxsCar), \(scopesCar), \(engineTypesCar), \(mileagesCar), \(bodyTypesCar), \(drivesCar), \(colorsCar)"
         cell.locationCarLabel.text = "\(locationsCar) · \(datesCar)"
         cell.configure(carTop: carTop, winCar: carWin)
-        
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -135,4 +135,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         return attributedText
     }
+}
+
+extension SearchViewController: XIBTableViewCellDelegate {
+    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage]) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.receivedNameText = "\(name)"
+        vc.receivedPriceText = "\(price)"
+        vc.receivedDPriceText = "\(dprice)"
+        vc.receivedInfoText = "\(infoMin)"
+        vc.receivedLocationText = "\(location)"
+        vc.receivedImages = image
+    }
+    
 }

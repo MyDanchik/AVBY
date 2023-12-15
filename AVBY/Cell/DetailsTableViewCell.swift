@@ -1,10 +1,7 @@
 import UIKit
 import AVFoundation
 
-protocol XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage])
-}
-class SearchTableViewCell: UITableViewCell {
+class DetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var conteinerView: UIView!
     @IBOutlet weak var nameCarLabel: UILabel!
@@ -25,16 +22,8 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var vinLabel: UILabel!
     @IBOutlet weak var photoView: UIView!
     
-    @IBAction func leasingButtonNext(_ sender: UIButton) {
-        tapToNext()
-        
-    }
-    
-    
-    
-
     // MARK: - Свойства
-    var delegate: XIBTableViewCellDelegate?
+    
     private var photos = [UIImage]()
     
     // MARK: - Публичные методы
@@ -143,7 +132,7 @@ class SearchTableViewCell: UITableViewCell {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
-extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let iconCell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: "IconCollectionViewCell", for: indexPath) as? IconCollectionViewCell {
@@ -190,19 +179,6 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        tapToNext()
-    }
     
-    private func tapToNext() {
-        delegate?.receivedData(
-            name: nameCarLabel.text ?? "",
-            price: priceCarLabel.text ?? "",
-            dprice: dpriceCarLabel.text ?? "",
-            infoMin: infoCarLabel.text ?? "",
-            location: locationCarLabel.text ?? "",
-            image: photos
-        )
-        print("dadad")
-    }
+
 }
