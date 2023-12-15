@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfY-F9-SRB">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Диалоги-->
+        <scene sceneID="2Cb-Dm-CdV">
+            <objects>
+                <viewController id="5z5-Qf-Kof" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W4X-R6-9k1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В разработке" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cM-df-vIK">
+                                <rect key="frame" x="66.666666666666686" y="400.66666666666669" width="260" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lXR-ek-2O1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5cM-df-vIK" firstAttribute="centerY" secondItem="W4X-R6-9k1" secondAttribute="centerY" id="CdN-27-A3l"/>
+                            <constraint firstItem="5cM-df-vIK" firstAttribute="centerX" secondItem="W4X-R6-9k1" secondAttribute="centerX" id="fOd-3l-beH"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Диалоги" image="ellipsis.bubble.fill" catalog="system" id="1B2-jD-6wc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6o-dw-05F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="2432"/>
+        </scene>
+        <!--Избранное-->
+        <scene sceneID="We9-na-crz">
+            <objects>
+                <viewController id="2h2-n4-Q25" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KlB-UT-1I8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В разработке" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-u4-ijN">
+                                <rect key="frame" x="66.666666666666686" y="400.66666666666669" width="260" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FnG-fn-Yv8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xtw-u4-ijN" firstAttribute="centerY" secondItem="KlB-UT-1I8" secondAttribute="centerY" id="hlQ-jv-xyp"/>
+                            <constraint firstItem="Xtw-u4-ijN" firstAttribute="centerX" secondItem="KlB-UT-1I8" secondAttribute="centerX" id="reZ-Cc-FYC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Избранное" image="bookmark.fill" catalog="system" id="BcR-FV-pIs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="geT-M3-lgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979" y="1134"/>
+        </scene>
+        <!--Поиск-->
+        <scene sceneID="PY5-Cu-bF5">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uw4-76-dps" customClass="SearchViewController" customModule="AVBY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0bk-mc-H3g">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kji-eo-qUo">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" name="backgroundVC"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLj-FO-bbK">
+                                <rect key="frame" x="84" y="709" width="225" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G47-vx-SlK">
+                                        <rect key="frame" x="65" y="0.0" width="160" height="45"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Tmu-F4-9BL"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="  Параметры" image="slider.horizontal.3" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx8-dT-QBd">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="LiE-uU-YvE"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="sparkle.magnifyingglass" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="G47-vx-SlK" firstAttribute="top" secondItem="xLj-FO-bbK" secondAttribute="top" id="9qV-6A-sp4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tx8-dT-QBd" secondAttribute="bottom" id="CU5-XR-qYY"/>
+                                    <constraint firstItem="Tx8-dT-QBd" firstAttribute="centerY" secondItem="xLj-FO-bbK" secondAttribute="centerY" id="DHJ-RK-VsZ"/>
+                                    <constraint firstAttribute="width" constant="225" id="E5J-8k-n8m"/>
+                                    <constraint firstAttribute="trailing" secondItem="G47-vx-SlK" secondAttribute="trailing" id="PGc-Jj-NhX"/>
+                                    <constraint firstAttribute="bottom" secondItem="G47-vx-SlK" secondAttribute="bottom" id="TJ2-JC-lTb"/>
+                                    <constraint firstItem="Tx8-dT-QBd" firstAttribute="top" secondItem="xLj-FO-bbK" secondAttribute="top" id="bab-XI-OMg"/>
+                                    <constraint firstItem="G47-vx-SlK" firstAttribute="centerY" secondItem="xLj-FO-bbK" secondAttribute="centerY" id="gab-FQ-Xhy"/>
+                                    <constraint firstAttribute="height" constant="45" id="hbE-Nz-ebH"/>
+                                    <constraint firstItem="Tx8-dT-QBd" firstAttribute="leading" secondItem="xLj-FO-bbK" secondAttribute="leading" id="xQe-8L-JYM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mhm-dL-Z5k"/>
+                        <color key="backgroundColor" name="backgroundCell"/>
+                        <constraints>
+                            <constraint firstItem="kji-eo-qUo" firstAttribute="top" secondItem="Mhm-dL-Z5k" secondAttribute="top" id="FUM-j2-LYo"/>
+                            <constraint firstItem="xLj-FO-bbK" firstAttribute="centerX" secondItem="0bk-mc-H3g" secondAttribute="centerX" id="KBv-ft-9cE"/>
+                            <constraint firstItem="kji-eo-qUo" firstAttribute="leading" secondItem="Mhm-dL-Z5k" secondAttribute="leading" id="Kxk-iU-dAN"/>
+                            <constraint firstItem="Mhm-dL-Z5k" firstAttribute="bottom" secondItem="xLj-FO-bbK" secondAttribute="bottom" constant="15" id="Pzy-4M-2eB"/>
+                            <constraint firstItem="Mhm-dL-Z5k" firstAttribute="trailing" secondItem="kji-eo-qUo" secondAttribute="trailing" id="hRg-BG-INc"/>
+                            <constraint firstItem="Mhm-dL-Z5k" firstAttribute="bottom" secondItem="kji-eo-qUo" secondAttribute="bottom" id="rAH-Ce-tW2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="e6S-au-T7G"/>
+                    <navigationItem key="navigationItem" style="editor" id="1Yt-fa-AO0"/>
+                    <connections>
+                        <outlet property="buttonParamView" destination="xLj-FO-bbK" id="A9I-T6-nxa"/>
+                        <outlet property="paramButton" destination="G47-vx-SlK" id="hKF-Mb-bHZ"/>
+                        <outlet property="searchParamButton" destination="Tx8-dT-QBd" id="HZy-nI-oz5"/>
+                        <outlet property="tableView" destination="kji-eo-qUo" id="3aA-ec-IaF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxj-nU-Iea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1531" y="-616"/>
+        </scene>
+        <!--Проечее-->
+        <scene sceneID="Bs1-cr-BlH">
+            <objects>
+                <viewController id="1Ui-sQ-Zsv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tjH-kr-t8y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В разработке" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSB-R7-CEf">
+                                <rect key="frame" x="66.666666666666686" y="400.66666666666669" width="260" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H6U-Ao-BYa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rSB-R7-CEf" firstAttribute="centerX" secondItem="tjH-kr-t8y" secondAttribute="centerX" id="QR9-Rg-S4g"/>
+                            <constraint firstItem="rSB-R7-CEf" firstAttribute="centerY" secondItem="tjH-kr-t8y" secondAttribute="centerY" id="RDU-dt-Qwr"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Проечее" image="line.3.horizontal" catalog="system" id="enJ-av-S0v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQT-ET-odu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937" y="3079"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wVC-03-hjF">
+            <objects>
+                <tabBarController id="wfY-F9-SRB" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6JS-US-EHr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="backgroundVC"/>
+                        <color key="tintColor" name="barIconActive"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pya-wi-zRp" kind="relationship" relationship="viewControllers" id="h7m-WO-kj7"/>
+                        <segue destination="2h2-n4-Q25" kind="relationship" relationship="viewControllers" id="8gE-oz-jr0"/>
+                        <segue destination="NB9-M9-4DY" kind="relationship" relationship="viewControllers" id="1eE-w5-jDi"/>
+                        <segue destination="5z5-Qf-Kof" kind="relationship" relationship="viewControllers" id="GaW-nG-mVd"/>
+                        <segue destination="1Ui-sQ-Zsv" kind="relationship" relationship="viewControllers" id="kYZ-mK-NgP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNE-En-fQn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181" y="-616"/>
+        </scene>
+        <!--Поиск-->
+        <scene sceneID="Wqs-mZ-SmN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pya-wi-zRp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="utb-E1-zYx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" alpha="0.25" contentMode="scaleToFill" id="oJ8-At-EqH">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uw4-76-dps" kind="relationship" relationship="rootViewController" id="vQm-QR-lAJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pin-4T-KLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="-616"/>
+        </scene>
+        <!--Объяления-->
+        <scene sceneID="lgZ-s1-8od">
+            <objects>
+                <viewController id="NB9-M9-4DY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oEV-JR-t06">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В разработке" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p70-qg-wwy">
+                                <rect key="frame" x="66.666666666666686" y="400.66666666666669" width="260" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LNy-4p-vhC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p70-qg-wwy" firstAttribute="centerX" secondItem="oEV-JR-t06" secondAttribute="centerX" id="WCy-ac-tIC"/>
+                            <constraint firstItem="p70-qg-wwy" firstAttribute="centerY" secondItem="oEV-JR-t06" secondAttribute="centerY" id="hPs-B0-etA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Объяления" image="plus.rectangle.fill" catalog="system" id="Eo9-3V-FaP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOe-Zs-zMP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="1771"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
+        <image name="ellipsis.bubble.fill" catalog="system" width="128" height="110"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <image name="sparkle.magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundCell">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundVC">
+            <color red="0.90196078431372551" green="0.93333333333333335" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="barIconActive">
+            <color red="0.24705882352941178" green="0.55686274509803924" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
