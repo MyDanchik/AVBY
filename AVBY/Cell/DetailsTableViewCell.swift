@@ -57,7 +57,7 @@ class DetailsTableViewCell: UITableViewCell {
     }
     
     private func configureContainerView() {
-        conteinerView.layer.cornerRadius = 10
+        conteinerView.layer.cornerRadius = 0
         conteinerView.backgroundColor = .backgroundCell
         lineView.backgroundColor = UIColor.separate
     }
@@ -93,7 +93,7 @@ class DetailsTableViewCell: UITableViewCell {
         dpriceCarLabel.font =  UIFont.systemFont(ofSize: 15)
         
         infoCarLabel.textColor = UIColor.title
-        infoCarLabel.font =  UIFont.systemFont(ofSize: 14)
+        infoCarLabel.font =  UIFont.systemFont(ofSize: 16)
         
         locationCarLabel.textColor = UIColor.subtitle
         locationCarLabel.font =  UIFont.systemFont(ofSize: 12)
@@ -122,8 +122,8 @@ class DetailsTableViewCell: UITableViewCell {
     }
     //кнопки лизинга
     private func leasingEdit() {
-        leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         
         leasingButton.setTitleColor(UIColor.buttonText, for: .normal)
         leaseСalculationButton.setTitleColor(UIColor.buttonText, for: .normal)

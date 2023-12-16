@@ -150,4 +150,5 @@ extension SearchViewController: XIBTableViewCellDelegate {
         vc.receivedImages = image
     }
     
+    
 }

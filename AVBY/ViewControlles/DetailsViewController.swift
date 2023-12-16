@@ -54,7 +54,12 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         let detail = receivedImages ?? []
         let dpricesCar = receivedDPriceText
 
-        cell.priceCarLabel.text = pricesCar
+
+        let pricesCarText = pricesCar ?? "default value"
+        let attributedPricesText = createAttributedText(for: pricesCarText, highlightingSubstring: "р.", withBoldSystemFont: 15)
+
+
+        cell.priceCarLabel.attributedText = attributedPricesText
         cell.nameCarLabel.text = namesCar
         cell.infoCarLabel.text = infosCar
         cell.locationCarLabel.text = locationsCar
@@ -65,6 +70,17 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.backgroundColor = .systemGray6
         
         return cell
+    }
+    
+    func createAttributedText(for text: String, highlightingSubstring substring: String, withBoldSystemFont fontSize: CGFloat) -> NSAttributedString {
+        let attributedText = NSMutableAttributedString(string: text)
+        
+        if let range = text.range(of: substring) {
+            let nsRange = NSRange(range, in: text)
+            attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: fontSize), range: nsRange)
+        }
+        
+        return attributedText
     }
     
 }
