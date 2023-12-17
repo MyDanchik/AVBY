@@ -41,6 +41,7 @@ class DetailsViewController: UIViewController {
         tableView.backgroundColor = .backgroundVC
         tableView.register(UINib(nibName: "DetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailsTableViewCell")
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
+        tableView.register(UINib(nibName: "ButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "ButtonTableViewCell")
     }
     private func setupNavigationBar() {
         navigationItem.title = receivedNameText
@@ -54,8 +55,9 @@ class DetailsViewController: UIViewController {
         let infoSection: CarViewSection = .options(CarOptions(title: "Описание", options: ["Очень интересно"]))
         let optionsSection: CarViewSection = .options(CarOptions(title: "Комплектация", options: ["ABS", "LED", "Turbo"]))
         let exhangeSection: CarViewSection = .options(CarOptions(title: "Обмен не интересует", options: ["Продавца не интересует обменПродавца не интересует обменПродавца не интересует обменПродавца не интересует обменПродавца не интересует обменПродавца не интересует обмен"]))
+        let buttonSection: CarViewSection = .options(CarOptions(title: "Кнопка", options: ["Кликни меня"]))
         
-        sections.append(contentsOf: [detailsSection,infoSection, optionsSection, exhangeSection])
+        sections.append(contentsOf: [detailsSection,infoSection, optionsSection, exhangeSection, buttonSection])
     }
 }
 
@@ -99,7 +101,11 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 tableView.backgroundColor = .systemGray6
                 return cell
-            } else {
+            }  else if carOptions.title == "Кнопка" {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonTableViewCell", for: indexPath) as! ButtonTableViewCell
+                // Configure your ButtonTableViewCell here
+                return cell
+            }else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
                 cell.set(title: carOptions.title, options: carOptions.options)
                 return cell

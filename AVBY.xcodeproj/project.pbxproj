@@ -24,6 +24,8 @@
 		19E9A4392B2C83FA00E6FA6B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9A4382B2C83FA00E6FA6B /* DetailsViewController.swift */; };
 		19E9A43E2B2F080300E6FA6B /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9A43C2B2F080300E6FA6B /* DescriptionTableViewCell.swift */; };
 		19E9A43F2B2F080300E6FA6B /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E9A43D2B2F080300E6FA6B /* DescriptionTableViewCell.xib */; };
+		19E9A4422B2F1DCF00E6FA6B /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9A4402B2F1DCF00E6FA6B /* ButtonTableViewCell.swift */; };
+		19E9A4432B2F1DCF00E6FA6B /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E9A4412B2F1DCF00E6FA6B /* ButtonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		19E9A4382B2C83FA00E6FA6B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		19E9A43C2B2F080300E6FA6B /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		19E9A43D2B2F080300E6FA6B /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		19E9A4402B2F1DCF00E6FA6B /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		19E9A4412B2F1DCF00E6FA6B /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				19E9A4342B2C806D00E6FA6B /* DetailsTableViewCell.xib */,
 				1926113C2B20B8D1000376E0 /* SearchTableViewCell.swift */,
 				1926113D2B20B8D1000376E0 /* SearchTableViewCell.xib */,
+				19E9A4402B2F1DCF00E6FA6B /* ButtonTableViewCell.swift */,
+				19E9A4412B2F1DCF00E6FA6B /* ButtonTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				190E83772B19EDCF00F2742A /* Assets.xcassets in Resources */,
 				19E9A43F2B2F080300E6FA6B /* DescriptionTableViewCell.xib in Resources */,
 				190E83752B19EDCE00F2742A /* Main.storyboard in Resources */,
+				19E9A4432B2F1DCF00E6FA6B /* ButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1926113A2B20B835000376E0 /* SearchViewController.swift in Sources */,
+				19E9A4422B2F1DCF00E6FA6B /* ButtonTableViewCell.swift in Sources */,
 				19E132582B2A1058001D21E0 /* Info Car.swift in Sources */,
 				19E9A4392B2C83FA00E6FA6B /* DetailsViewController.swift in Sources */,
 				190E836E2B19EDCE00F2742A /* AppDelegate.swift in Sources */,

@@ -251,7 +251,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KTG-mZ-qPU"/>
-                        <color key="backgroundColor" name="backgroundCell"/>
+                        <color key="backgroundColor" name="backgroundVC"/>
                         <constraints>
                             <constraint firstItem="KTG-mZ-qPU" firstAttribute="bottom" secondItem="0O2-jy-MtP" secondAttribute="bottom" id="0A5-M8-dC3"/>
                             <constraint firstItem="0O2-jy-MtP" firstAttribute="top" secondItem="KTG-mZ-qPU" secondAttribute="top" id="MVk-zV-tyR"/>
