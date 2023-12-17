@@ -240,7 +240,7 @@
         <!--Поиск-->
         <scene sceneID="aqe-WZ-Kjr">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R05-Ms-2On" customClass="DetailsViewController" customModule="AVBY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R05-Ms-2On" customClass="DetailsViewController" customModule="AVBY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AqR-Pb-0ES">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

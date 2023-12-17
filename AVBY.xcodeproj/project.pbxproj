@@ -22,6 +22,8 @@
 		19E9A4352B2C806D00E6FA6B /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E9A4342B2C806D00E6FA6B /* DetailsTableViewCell.xib */; };
 		19E9A4372B2C808300E6FA6B /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9A4362B2C808300E6FA6B /* DetailsTableViewCell.swift */; };
 		19E9A4392B2C83FA00E6FA6B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9A4382B2C83FA00E6FA6B /* DetailsViewController.swift */; };
+		19E9A43E2B2F080300E6FA6B /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9A43C2B2F080300E6FA6B /* DescriptionTableViewCell.swift */; };
+		19E9A43F2B2F080300E6FA6B /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E9A43D2B2F080300E6FA6B /* DescriptionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		19E9A4342B2C806D00E6FA6B /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
 		19E9A4362B2C808300E6FA6B /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		19E9A4382B2C83FA00E6FA6B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		19E9A43C2B2F080300E6FA6B /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		19E9A43D2B2F080300E6FA6B /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 		192611382B20B811000376E0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				19E9A43C2B2F080300E6FA6B /* DescriptionTableViewCell.swift */,
+				19E9A43D2B2F080300E6FA6B /* DescriptionTableViewCell.xib */,
 				19E9A4362B2C808300E6FA6B /* DetailsTableViewCell.swift */,
 				19E9A4342B2C806D00E6FA6B /* DetailsTableViewCell.xib */,
 				1926113C2B20B8D1000376E0 /* SearchTableViewCell.swift */,
@@ -189,6 +195,7 @@
 				19E9A4352B2C806D00E6FA6B /* DetailsTableViewCell.xib in Resources */,
 				1926113F2B20B8D1000376E0 /* SearchTableViewCell.xib in Resources */,
 				190E83772B19EDCF00F2742A /* Assets.xcassets in Resources */,
+				19E9A43F2B2F080300E6FA6B /* DescriptionTableViewCell.xib in Resources */,
 				190E83752B19EDCE00F2742A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +213,7 @@
 				190E836E2B19EDCE00F2742A /* AppDelegate.swift in Sources */,
 				192611352B20B7D0000376E0 /* Cars.swift in Sources */,
 				190E83702B19EDCE00F2742A /* SceneDelegate.swift in Sources */,
+				19E9A43E2B2F080300E6FA6B /* DescriptionTableViewCell.swift in Sources */,
 				1926113E2B20B8D1000376E0 /* SearchTableViewCell.swift in Sources */,
 				19E9A4372B2C808300E6FA6B /* DetailsTableViewCell.swift in Sources */,
 				19C4B2E32B24E4CF00A6F217 /* IconCollectionViewCell.swift in Sources */,
