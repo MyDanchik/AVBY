@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 protocol XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String)
+    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String, leasing: String)
 }
 class SearchTableViewCell: UITableViewCell {
     
@@ -208,7 +208,8 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             image: photos,
             infoLong: infoLongLabel.text ?? "",
             equipment: equipmentLabel.text?.components(separatedBy: "") ?? [],
-            exchange: exchangeLabel.text ?? ""
+            exchange: exchangeLabel.text ?? "",
+            leasing: leaseСalculationButton.titleLabel?.text ?? ""
         )
         print("dadad")
     }

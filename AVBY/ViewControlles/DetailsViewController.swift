@@ -21,7 +21,8 @@ class DetailsViewController: UIViewController {
     var receivedIndex: String?
     var receivedInfoLong: String?
     var receivedEquipmentText: [String]?
-    var receivedExchangeTaxt: String?
+    var receivedExchangeText: String?
+    var receivedLeasingText: String?
     
     private var sections = [CarViewSection]()
     
@@ -51,7 +52,7 @@ class DetailsViewController: UIViewController {
         let detailsSection: CarViewSection = .options(CarOptions(title: "Объявление", options: [""]))
         let infoSection: CarViewSection = .options(CarOptions(title: "Описание", options: ["\(receivedInfoLong ?? "Нет информации")"]))
         let equipmentOptions: CarViewSection = .options(CarOptions(title: "Комплектация", options: receivedEquipmentText ?? []))
-        let exhangeSection: CarViewSection = .options(CarOptions(title: "Обмен не интересует", options: ["\(receivedExchangeTaxt ?? "Нет информации")"]))
+        let exhangeSection: CarViewSection = .options(CarOptions(title: "Обмен не интересует", options: ["\(receivedExchangeText ?? "Нет информации")"]))
         let buttonSection: CarViewSection = .options(CarOptions(title: "Кнопка", options: [""]))
         
         sections.append(contentsOf: [detailsSection, infoSection, equipmentOptions, exhangeSection, buttonSection])
@@ -84,8 +85,11 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 let locationsCar = receivedLocationText
                 let detail = receivedImages ?? []
                 let dpricesCar = receivedDPriceText
+                let leasingCar = receivedLeasingText
                 let pricesCarText = pricesCar ?? "default value"
                 let attributedPricesText = createAttributedText(for: pricesCarText, highlightingSubstring: "р.", withBoldSystemFont: 15)
+                let leasingText = leasingCar ?? "default value"
+                let attributedLeasingText = createAttributedText(for: leasingText, highlightingSubstring: "", withBoldSystemFont: 13)
                 
                 cell.priceCarLabel.attributedText = attributedPricesText
                 cell.nameCarLabel.text = namesCar
@@ -93,12 +97,13 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.locationCarLabel.text = locationsCar
                 cell.configure(photos: detail)
                 cell.dpriceCarLabel.text = (dpricesCar)
-            
+                cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
                 tableView.backgroundColor = .systemGray6
                 
                 return cell
             }  else if carOptions.title == "Кнопка" {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonTableViewCell", for: indexPath) as! ButtonTableViewCell
+                cell.presentingViewController = self
                 return cell
             }else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell

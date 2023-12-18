@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-Fn-xlb">
-                        <rect key="frame" x="5" y="15" width="525" height="490"/>
+                        <rect key="frame" x="5" y="15" width="525" height="480"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YQ0-Oh-Grq">
-                                <rect key="frame" x="0.0" y="0.0" width="525" height="490"/>
+                                <rect key="frame" x="0.0" y="0.0" width="525" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-oi-4PJ">
                                         <rect key="frame" x="0.0" y="10" width="525" height="75"/>
@@ -270,7 +270,7 @@
                                             <constraint firstAttribute="height" constant="40" id="tRu-oJ-gQW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-Hn-FKE">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-Hn-FKE">
                                         <rect key="frame" x="0.0" y="480" width="525" height="10"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXq-oY-qra">

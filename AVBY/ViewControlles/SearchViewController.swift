@@ -146,7 +146,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SearchViewController: XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String) {
+    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String, leasing: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         self.navigationController?.pushViewController(vc, animated: true)
@@ -158,7 +158,8 @@ extension SearchViewController: XIBTableViewCellDelegate {
         vc.receivedImages = image
         vc.receivedInfoLong = "\(infoLong)"
         vc.receivedEquipmentText  = equipment
-        vc.receivedExchangeTaxt = exchange
+        vc.receivedExchangeText = exchange
+        vc.receivedLeasingText = leasing
     }
     
     
