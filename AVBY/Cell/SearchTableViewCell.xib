@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-Fn-xlb">
-                        <rect key="frame" x="5" y="15" width="525" height="485"/>
+                        <rect key="frame" x="5" y="15" width="525" height="490"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YQ0-Oh-Grq">
-                                <rect key="frame" x="0.0" y="0.0" width="525" height="485"/>
+                                <rect key="frame" x="0.0" y="0.0" width="525" height="490"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-oi-4PJ">
                                         <rect key="frame" x="0.0" y="10" width="525" height="75"/>
@@ -245,7 +245,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BT5-ze-w2e">
-                                        <rect key="frame" x="0.0" y="440" width="525" height="35"/>
+                                        <rect key="frame" x="0.0" y="440" width="525" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-pc-lqZ">
                                                 <rect key="frame" x="10" y="5" width="52" height="30"/>
@@ -267,21 +267,21 @@
                                             <constraint firstItem="HZd-pc-lqZ" firstAttribute="top" secondItem="BT5-ze-w2e" secondAttribute="top" constant="5" id="FQN-yp-oTj"/>
                                             <constraint firstAttribute="trailing" secondItem="kmf-qY-EzF" secondAttribute="trailing" constant="10" id="Fcd-UN-kxQ"/>
                                             <constraint firstItem="HZd-pc-lqZ" firstAttribute="leading" secondItem="BT5-ze-w2e" secondAttribute="leading" constant="10" id="kFU-27-o8O"/>
-                                            <constraint firstAttribute="height" constant="35" id="tRu-oJ-gQW"/>
+                                            <constraint firstAttribute="height" constant="40" id="tRu-oJ-gQW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-Hn-FKE">
-                                        <rect key="frame" x="0.0" y="475" width="525" height="10"/>
+                                        <rect key="frame" x="0.0" y="480" width="525" height="10"/>
                                         <subviews>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXq-oY-qra">
-                                                <rect key="frame" x="8" y="21" width="41" height="20"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXq-oY-qra">
+                                                <rect key="frame" x="8" y="21" width="29" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p85-vr-lic">
-                                                <rect key="frame" x="198" y="21" width="42" height="21"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="equipment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p85-vr-lic">
+                                                <rect key="frame" x="198" y="21" width="82" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -331,7 +331,9 @@
             <connections>
                 <outlet property="conteinerView" destination="gFx-Fn-xlb" id="0xC-8V-LgI"/>
                 <outlet property="dpriceCarLabel" destination="ZHb-YK-bvM" id="XpQ-sS-xiC"/>
+                <outlet property="equipmentLabel" destination="p85-vr-lic" id="Mjk-ay-kX1"/>
                 <outlet property="infoCarLabel" destination="5a6-y7-Wr4" id="ByS-ca-lTG"/>
+                <outlet property="infoLongLabel" destination="JXq-oY-qra" id="BLo-QI-128"/>
                 <outlet property="leaseСalculationButton" destination="kmf-qY-EzF" id="zGz-cf-yVq"/>
                 <outlet property="leasingButton" destination="HZd-pc-lqZ" id="i4v-jW-H70"/>
                 <outlet property="lineView" destination="rOw-8V-ppE" id="N1V-Lp-7va"/>
@@ -372,10 +374,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

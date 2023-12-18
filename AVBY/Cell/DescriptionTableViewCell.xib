@@ -30,10 +30,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-Es-G4G">
-                                <rect key="frame" x="12" y="64" width="443" height="87"/>
+                                <rect key="frame" x="12" y="64" width="443" height="79"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-LV-Yg1">
-                                        <rect key="frame" x="0.0" y="0.0" width="443" height="87"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-LV-Yg1">
+                                        <rect key="frame" x="0.0" y="0.0" width="443" height="79"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" name="backgroundCell"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="MvR-Es-G4G" secondAttribute="bottom" constant="12" id="17p-BB-pvJ"/>
+                            <constraint firstAttribute="bottom" secondItem="MvR-Es-G4G" secondAttribute="bottom" constant="20" id="17p-BB-pvJ"/>
                             <constraint firstItem="MvR-Es-G4G" firstAttribute="leading" secondItem="RJL-cm-3kA" secondAttribute="leading" constant="12" id="Fbz-RM-ANk"/>
                             <constraint firstItem="MvR-Es-G4G" firstAttribute="top" secondItem="ide-4y-uPG" secondAttribute="bottom" constant="12" id="FjK-o8-XNV"/>
                             <constraint firstAttribute="trailing" secondItem="ide-4y-uPG" secondAttribute="trailing" constant="12" id="NNg-un-I7y"/>

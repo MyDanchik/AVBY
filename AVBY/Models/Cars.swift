@@ -16,4 +16,6 @@ struct Car {
     let image: [UIImage]
     var top: Bool
     var vin: Bool
+    var equipment: [String]
+    
 }

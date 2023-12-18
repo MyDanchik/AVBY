@@ -108,7 +108,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let attributedPricesText = createAttributedText(for: pricesCarText, highlightingSubstring: "р.", withBoldSystemFont: 15)
         let leasingText = "от \(formatLeasing) BYN/месяц"
         let attributedLeasingText = createAttributedText(for: leasingText, highlightingSubstring: "\(formatLeasing) BYN", withBoldSystemFont: 13)
-
+        let infoText = infoCar[indexPath.row]
+        let equipmentText = equipmentCar[indexPath.row]
+        let arrayEquipment = equipmentText.joined(separator: ",\n")
+        
         cell.priceCarLabel.attributedText = attributedPricesText
         cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
         cell.leasingButton.setTitle("Лизинг", for: .normal)
@@ -118,6 +121,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.infoCarLabel.text = "\(yearsCar), \(gearboxsCar), \(scopesCar), \(engineTypesCar), \(mileagesCar), \(bodyTypesCar), \(drivesCar), \(colorsCar)"
         cell.locationCarLabel.text = "\(locationsCar) · \(datesCar)"
         cell.configure(carTop: carTop, winCar: carWin)
+        cell.infoLongLabel.text = infoText
+        cell.equipmentLabel.text = arrayEquipment
         cell.delegate = self
         return cell
     }
@@ -138,7 +143,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SearchViewController: XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage]) {
+    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String]) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         self.navigationController?.pushViewController(vc, animated: true)
@@ -148,6 +153,8 @@ extension SearchViewController: XIBTableViewCellDelegate {
         vc.receivedInfoText = "\(infoMin)"
         vc.receivedLocationText = "\(location)"
         vc.receivedImages = image
+        vc.receivedInfoLong = "\(infoLong)"
+        vc.receivedEquipmentText  = equipment
     }
     
     
