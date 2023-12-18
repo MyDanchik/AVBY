@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 protocol XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String])
+    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String)
 }
 class SearchTableViewCell: UITableViewCell {
     
@@ -27,6 +27,7 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var infoLongLabel: UILabel!
     @IBOutlet weak var equipmentLabel: UILabel!
+    @IBOutlet weak var exchangeLabel: UILabel!
     
     @IBAction func leasingButtonNext(_ sender: UIButton) {
         tapToNext()
@@ -206,7 +207,8 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             location: locationCarLabel.text ?? "",
             image: photos,
             infoLong: infoLongLabel.text ?? "",
-            equipment: equipmentLabel.text?.components(separatedBy: "") ?? []
+            equipment: equipmentLabel.text?.components(separatedBy: "") ?? [],
+            exchange: exchangeLabel.text ?? ""
         )
         print("dadad")
     }

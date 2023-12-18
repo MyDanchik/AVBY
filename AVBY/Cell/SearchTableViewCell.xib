@@ -287,8 +287,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjV-Hz-tHS">
-                                                <rect key="frame" x="342" y="20" width="42" height="21"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exchange" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjV-Hz-tHS">
+                                                <rect key="frame" x="342" y="20" width="75" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -332,6 +332,7 @@
                 <outlet property="conteinerView" destination="gFx-Fn-xlb" id="0xC-8V-LgI"/>
                 <outlet property="dpriceCarLabel" destination="ZHb-YK-bvM" id="XpQ-sS-xiC"/>
                 <outlet property="equipmentLabel" destination="p85-vr-lic" id="Mjk-ay-kX1"/>
+                <outlet property="exchangeLabel" destination="CjV-Hz-tHS" id="aGU-9C-ffp"/>
                 <outlet property="infoCarLabel" destination="5a6-y7-Wr4" id="ByS-ca-lTG"/>
                 <outlet property="infoLongLabel" destination="JXq-oY-qra" id="BLo-QI-128"/>
                 <outlet property="leaseСalculationButton" destination="kmf-qY-EzF" id="zGz-cf-yVq"/>

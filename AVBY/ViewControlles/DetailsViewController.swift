@@ -17,12 +17,11 @@ class DetailsViewController: UIViewController {
     var receivedInfoText: String?
     var receivedLocationText: String?
     var receivedDescriptionText: String?
-//    var receivedEquipmentText: String?
-    var receivedExchangeTaxt: String?
     var receivedImages: [UIImage]?
     var receivedIndex: String?
     var receivedInfoLong: String?
     var receivedEquipmentText: [String]?
+    var receivedExchangeTaxt: String?
     
     private var sections = [CarViewSection]()
     
@@ -52,7 +51,7 @@ class DetailsViewController: UIViewController {
         let detailsSection: CarViewSection = .options(CarOptions(title: "Объявление", options: [""]))
         let infoSection: CarViewSection = .options(CarOptions(title: "Описание", options: ["\(receivedInfoLong ?? "Нет информации")"]))
         let equipmentOptions: CarViewSection = .options(CarOptions(title: "Комплектация", options: receivedEquipmentText ?? []))
-        let exhangeSection: CarViewSection = .options(CarOptions(title: "Обмен не интересует", options: ["Продавца не интересует обмен"]))
+        let exhangeSection: CarViewSection = .options(CarOptions(title: "Обмен не интересует", options: ["\(receivedExchangeTaxt ?? "Нет информации")"]))
         let buttonSection: CarViewSection = .options(CarOptions(title: "Кнопка", options: [""]))
         
         sections.append(contentsOf: [detailsSection, infoSection, equipmentOptions, exhangeSection, buttonSection])

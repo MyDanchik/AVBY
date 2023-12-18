@@ -17,5 +17,6 @@ struct Car {
     var top: Bool
     var vin: Bool
     var equipment: [String]
+    var exchange: String
     
 }

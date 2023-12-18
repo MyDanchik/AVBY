@@ -23,7 +23,8 @@ private let car1 = Car(name: "Audi A4 B9",
                        ],
                        top: true,
                        vin: true,
-                       equipment: ["ABS1", "LED2", "Turbo3"])
+                       equipment: ["ABS1", "LED2", "Turbo3"],
+                       exchange: "Продавца не интересует обмен")
 
 
 private let car2 = Car(name: "Audi A6 C8",
@@ -48,7 +49,8 @@ private let car2 = Car(name: "Audi A6 C8",
                         UIImage(named: "Audi1_2")!,
                        ],
                        top: true,
-                       vin: false, equipment: ["ABS", "LED", "Turbo"])
+                       vin: false, equipment: ["ABS", "LED", "Turbo"],
+                       exchange: "неа")
 
 
 private let car3 = Car(name: "Audi Q5 FY · Рестайлинг",
@@ -73,7 +75,8 @@ private let car3 = Car(name: "Audi Q5 FY · Рестайлинг",
                         UIImage(named: "Audi3_6")!,
                        ],
                        top: false,
-                       vin: false, equipment: ["ABS132", "LED321", "Turbo"])
+                       vin: false, equipment: ["ABS132", "LED321", "Turbo"],
+                       exchange: "неа")
 
 
 private let car4 = Car(name: "Audi A4 B9",
@@ -98,7 +101,8 @@ private let car4 = Car(name: "Audi A4 B9",
                         UIImage(named: "Audi1_6")!,
                        ],
                        top: true,
-                       vin: true, equipment: ["ABS", "LED", "Turbo"])
+                       vin: true, equipment: ["ABS", "LED", "Turbo"],
+                       exchange: "неа")
 
 
 private let car5 = Car(name: "Audi A6 C8",
@@ -123,7 +127,8 @@ private let car5 = Car(name: "Audi A6 C8",
                         UIImage(named: "Audi1_2")!,
                        ],
                        top: true,
-                       vin: false, equipment: ["ABS", "LED", "Turbo"])
+                       vin: false, equipment: ["ABS", "LED", "Turbo"],
+                       exchange: "неа")
 
 
 // Массивы для работы с данными
@@ -146,4 +151,5 @@ var topCar = cars.map { $0.top }
 var vinCar = cars.map { $0.vin }
 let dateCar = cars.map { $0.date }
 let equipmentCar = cars.map { $0.equipment }
+let exchangeCar = cars.map { $0.exchange}
 

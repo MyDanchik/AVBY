@@ -111,6 +111,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let infoText = infoCar[indexPath.row]
         let equipmentText = equipmentCar[indexPath.row]
         let arrayEquipment = equipmentText.joined(separator: ",\n")
+        let exchangeText = exchangeCar[indexPath.row]
+    
         
         cell.priceCarLabel.attributedText = attributedPricesText
         cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
@@ -123,6 +125,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(carTop: carTop, winCar: carWin)
         cell.infoLongLabel.text = infoText
         cell.equipmentLabel.text = arrayEquipment
+        cell.exchangeLabel.text = exchangeText
         cell.delegate = self
         return cell
     }
@@ -143,7 +146,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SearchViewController: XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String]) {
+    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         self.navigationController?.pushViewController(vc, animated: true)
@@ -155,6 +158,7 @@ extension SearchViewController: XIBTableViewCellDelegate {
         vc.receivedImages = image
         vc.receivedInfoLong = "\(infoLong)"
         vc.receivedEquipmentText  = equipment
+        vc.receivedExchangeTaxt = exchange
     }
     
     
