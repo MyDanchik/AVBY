@@ -30,7 +30,6 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var exchangeLabel: UILabel!
     
     @IBAction func leasingButtonNext(_ sender: UIButton) {
-        tapToNext()
         
     }
     

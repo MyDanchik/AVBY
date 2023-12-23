@@ -14,6 +14,10 @@ class ButtonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        appealButton.layer.cornerRadius = 8
+        appealButton.setTitle("Пожаловаться", for: .normal)
+        appealButton.tintColor = .white
+        appealButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     }
 
     

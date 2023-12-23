@@ -11,6 +11,16 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var callButton: UIButton!
+
+    @IBOutlet weak var messageButton: UIButton!
+    @IBAction func callButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    
+    @IBAction func messageButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
     var receivedNameText: String?
     var receivedPriceText: String?
     var receivedDPriceText: String?
@@ -28,14 +38,17 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButtonParamView()
         setupTableView()
         setupNavigationBar()
         makeData()
-        tableView.reloadData()
+
+        
     }
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.reloadData()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .backgroundVC
         tableView.register(UINib(nibName: "DetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailsTableViewCell")
@@ -48,6 +61,38 @@ class DetailsViewController: UIViewController {
         tabBarController?.tabBar.isTranslucent = false
         tabBarController?.tabBar.barTintColor = .tabBar
     }
+    // MARK: - Настройка кнопки
+    
+    func setupButton(_ button: UIButton, imageName: String, title: String) {
+        let sfImage = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+        button.setImage(sfImage, for: .normal)
+        button.tintColor = .white
+        button.layer.cornerRadius = 8
+        button.backgroundColor = .vin
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    }
+    // MARK: - Настройка кнопок параметров
+    
+    func setupButtonParamView() {
+        setupButton(callButton, imageName: "", title: "Позвонить...")
+        setupButton(messageButton, imageName: "ellipsis.bubble.fill", title: "")
+    }
+    
+    func alertButtonConfiguration() {
+        let alert = UIAlertController(title: "Данная функция в разработке", message: "", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            print("ok")
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    
+    
+    
     private func makeData() {
         let detailsSection: CarViewSection = .options(CarOptions(title: "Объявление", options: [""]))
         let infoSection: CarViewSection = .options(CarOptions(title: "Описание", options: ["\(receivedInfoLong ?? "Нет информации")"]))
@@ -98,6 +143,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.configure(photos: detail)
                 cell.dpriceCarLabel.text = (dpricesCar)
                 cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
+                cell.presentingDetalisViewController = self
                 tableView.backgroundColor = .systemGray6
                 
                 return cell

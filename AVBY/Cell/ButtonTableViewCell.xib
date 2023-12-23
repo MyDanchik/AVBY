@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ads-ls-9g4">
-                        <rect key="frame" x="20" y="10" width="376" height="130"/>
+                        <rect key="frame" x="10" y="10" width="396" height="130"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-p4-v0Z">
-                                <rect key="frame" x="0.0" y="15" width="376" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-p4-v0Z">
+                                <rect key="frame" x="0.0" y="15" width="396" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.32589786599999998" blue="0.45406699020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9LT-vt-eUB"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="appealButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5J8-wW-wpn"/>
                                 </connections>
@@ -46,9 +46,9 @@
                 </subviews>
                 <color key="backgroundColor" name="backgroundVC"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Ads-ls-9g4" secondAttribute="trailing" constant="20" id="QBK-Ur-tDu"/>
+                    <constraint firstAttribute="trailing" secondItem="Ads-ls-9g4" secondAttribute="trailing" constant="10" id="QBK-Ur-tDu"/>
                     <constraint firstAttribute="bottom" secondItem="Ads-ls-9g4" secondAttribute="bottom" constant="10" id="YQz-t3-5If"/>
-                    <constraint firstItem="Ads-ls-9g4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="g6S-sC-tH4"/>
+                    <constraint firstItem="Ads-ls-9g4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="g6S-sC-tH4"/>
                     <constraint firstItem="Ads-ls-9g4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ucj-PI-XgM"/>
                 </constraints>
             </tableViewCellContentView>

@@ -2,6 +2,7 @@ import UIKit
 import AVFoundation
 
 class DetailsTableViewCell: UITableViewCell {
+    weak var presentingDetalisViewController: UIViewController?
     
     @IBOutlet weak var conteinerView: UIView!
     @IBOutlet weak var nameCarLabel: UILabel!
@@ -22,6 +23,28 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var vinLabel: UILabel!
     @IBOutlet weak var photoView: UIView!
     
+    @IBOutlet weak var shareButton: UIButton!
+    
+    @IBOutlet weak var commentButton: UIButton!
+    
+    @IBOutlet weak var favouritesButton: UIButton!
+    
+    @IBOutlet weak var belvebButton: UIButton!
+    
+    
+    @IBAction func shareButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    
+    @IBAction func commentButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    @IBAction func favouritesButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    @IBAction func belvebButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
     // MARK: - Свойства
     
     private var photos = [UIImage]()
@@ -54,6 +77,7 @@ class DetailsTableViewCell: UITableViewCell {
         topvinEdit()
         leasingEdit()
         configureCollectionViewLayout()
+        setupButtonParamView()
     }
     
     private func configureContainerView() {
@@ -127,8 +151,39 @@ class DetailsTableViewCell: UITableViewCell {
         
         leasingButton.setTitleColor(UIColor.buttonText, for: .normal)
         leaseСalculationButton.setTitleColor(UIColor.buttonText, for: .normal)
+        
+        belvebButton.layer.cornerRadius = 8
+        belvebButton.backgroundColor = .buttonText
+        belvebButton.alpha = 0.05
+    }
+    func setupButton(_ button: UIButton, imageName: String, title: String) {
+        let sfImage = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+        button.setImage(sfImage, for: .normal)
+        button.tintColor = .buttonText
+        button.backgroundColor = .clear
+        button.setTitleColor(.buttonText, for: .normal)
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+    }
+    
+    func alertButtonConfiguration() {
+        let alert = UIAlertController(title: "Данная функция в разработке", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in print("ok")}))
+                presentingDetalisViewController?.present(alert, animated: true)
+        
+    }
+
+    // MARK: - Настройка кнопок параметров
+
+    func setupButtonParamView() {
+        setupButton(shareButton, imageName: "square.and.arrow.up", title: "Поделиться")
+        setupButton(commentButton, imageName: "plus.message", title: "Комментарий")
+        setupButton(favouritesButton, imageName: "bookmark", title: "В избранное")
     }
 }
+
+
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 

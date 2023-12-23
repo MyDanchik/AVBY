@@ -246,35 +246,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0O2-jy-MtP">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" name="backgroundVC"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRl-Xn-Ppm">
-                                <rect key="frame" x="20" y="758" width="353" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.32589786599999998" blue="0.45406699020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRl-Xn-Ppm">
+                                <rect key="frame" x="10" y="758" width="293" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ODd-dP-9wS"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Позвонить"/>
+                                <connections>
+                                    <action selector="callButton:" destination="R05-Ms-2On" eventType="touchUpInside" id="I7z-Ij-a6N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VV3-bf-sOA">
+                                <rect key="frame" x="313" y="758" width="70" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ddr-Z3-45e"/>
+                                    <constraint firstAttribute="width" constant="70" id="nLh-rR-HSJ"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ellipsis.message.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="messageButton:" destination="R05-Ms-2On" eventType="touchUpInside" id="7yW-ik-a3z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KTG-mZ-qPU"/>
-                        <color key="backgroundColor" name="backgroundVC"/>
+                        <color key="backgroundColor" name="backgroundCell"/>
                         <constraints>
-                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="bottom" secondItem="0O2-jy-MtP" secondAttribute="bottom" id="0A5-M8-dC3"/>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="trailing" secondItem="VV3-bf-sOA" secondAttribute="trailing" constant="10" id="B4T-b6-ed3"/>
                             <constraint firstItem="KTG-mZ-qPU" firstAttribute="bottom" secondItem="mRl-Xn-Ppm" secondAttribute="bottom" constant="10" id="Ecb-Qq-qKz"/>
+                            <constraint firstItem="VV3-bf-sOA" firstAttribute="leading" secondItem="mRl-Xn-Ppm" secondAttribute="trailing" constant="10" id="Ecj-lG-YkF"/>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="bottom" secondItem="VV3-bf-sOA" secondAttribute="bottom" constant="10" id="LdC-us-mdZ"/>
                             <constraint firstItem="0O2-jy-MtP" firstAttribute="top" secondItem="KTG-mZ-qPU" secondAttribute="top" id="MVk-zV-tyR"/>
-                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="trailing" secondItem="mRl-Xn-Ppm" secondAttribute="trailing" constant="20" id="Mab-mO-dVZ"/>
-                            <constraint firstItem="mRl-Xn-Ppm" firstAttribute="leading" secondItem="KTG-mZ-qPU" secondAttribute="leading" constant="20" id="QyC-A5-Upi"/>
+                            <constraint firstItem="mRl-Xn-Ppm" firstAttribute="leading" secondItem="KTG-mZ-qPU" secondAttribute="leading" constant="10" id="QyC-A5-Upi"/>
                             <constraint firstItem="KTG-mZ-qPU" firstAttribute="trailing" secondItem="0O2-jy-MtP" secondAttribute="trailing" id="T2a-2P-mzH"/>
                             <constraint firstItem="0O2-jy-MtP" firstAttribute="leading" secondItem="KTG-mZ-qPU" secondAttribute="leading" id="VIr-Vf-trP"/>
+                            <constraint firstAttribute="bottom" secondItem="0O2-jy-MtP" secondAttribute="bottom" id="VRV-wH-0FZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="g6N-cJ-glK"/>
                     <navigationItem key="navigationItem" style="editor" id="0IH-de-jbF"/>
                     <connections>
+                        <outlet property="callButton" destination="mRl-Xn-Ppm" id="aWv-K0-Yoz"/>
+                        <outlet property="messageButton" destination="VV3-bf-sOA" id="qR0-KA-k6I"/>
                         <outlet property="tableView" destination="0O2-jy-MtP" id="d1V-uo-SYM"/>
                     </connections>
                 </viewController>
@@ -286,6 +307,7 @@
     <resources>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="ellipsis.bubble.fill" catalog="system" width="128" height="110"/>
+        <image name="ellipsis.message.fill" catalog="system" width="128" height="114"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
@@ -308,6 +330,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
