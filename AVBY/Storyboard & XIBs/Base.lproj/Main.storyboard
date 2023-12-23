@@ -89,6 +89,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="  Параметры" image="slider.horizontal.3" catalog="system"/>
+                                        <connections>
+                                            <action selector="paramButton:" destination="uw4-76-dps" eventType="touchUpInside" id="cpT-uM-YzQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx8-dT-QBd">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
@@ -99,6 +102,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="sparkle.magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchParamButton:" destination="uw4-76-dps" eventType="touchUpInside" id="8be-Ev-tXd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

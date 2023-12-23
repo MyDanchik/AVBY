@@ -16,12 +16,15 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var vinCarView: UIView!
     @IBOutlet weak var leasingButton: UIButton!
     @IBOutlet weak var leaseСalculationButton: UIButton!
-    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var separatorSecondView: UIView!
     @IBOutlet weak var topImage: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var vinImage: UIImageView!
     @IBOutlet weak var vinLabel: UILabel!
     @IBOutlet weak var photoView: UIView!
+    @IBOutlet weak var viewsButton: UIButton!
+    @IBOutlet weak var viewsTextButton: UIButton!
     
     @IBOutlet weak var shareButton: UIButton!
     
@@ -35,7 +38,6 @@ class DetailsTableViewCell: UITableViewCell {
     @IBAction func shareButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
-    
     @IBAction func commentButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
@@ -43,6 +45,9 @@ class DetailsTableViewCell: UITableViewCell {
         alertButtonConfiguration()
     }
     @IBAction func belvebButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    @IBAction func viewsButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
     // MARK: - Свойства
@@ -78,12 +83,22 @@ class DetailsTableViewCell: UITableViewCell {
         leasingEdit()
         configureCollectionViewLayout()
         setupButtonParamView()
+
+        viewsButton.layer.cornerRadius = 8
+        viewsButton.backgroundColor = .buttonText
+        viewsButton.alpha = 0.05
+        viewsTextButton.tintColor = .buttonText
+        
+        viewsTextButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        
+        
     }
     
     private func configureContainerView() {
         conteinerView.layer.cornerRadius = 0
         conteinerView.backgroundColor = .backgroundCell
-        lineView.backgroundColor = UIColor.separate
+        separatorView.backgroundColor = .separate
+        separatorSecondView.backgroundColor = .separate
     }
     
     private func configureCollectionView() {
@@ -146,8 +161,8 @@ class DetailsTableViewCell: UITableViewCell {
     }
     //кнопки лизинга
     private func leasingEdit() {
-        leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         
         leasingButton.setTitleColor(UIColor.buttonText, for: .normal)
         leaseСalculationButton.setTitleColor(UIColor.buttonText, for: .normal)

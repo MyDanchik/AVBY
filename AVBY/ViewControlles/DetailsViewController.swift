@@ -113,7 +113,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch sections[section] {
-        case .options(let carOptions):
+        case .options(_):
             return 1
         }
     }

@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="15" width="467" height="163"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ide-4y-uPG">
-                                <rect key="frame" x="12" y="12" width="443" height="40"/>
+                                <rect key="frame" x="12" y="5" width="443" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="j36-TI-dcq"/>
                                 </constraints>
@@ -30,10 +30,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-Es-G4G">
-                                <rect key="frame" x="12" y="64" width="443" height="79"/>
+                                <rect key="frame" x="12" y="50" width="443" height="93"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-LV-Yg1">
-                                        <rect key="frame" x="0.0" y="0.0" width="443" height="79"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="443" height="93"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -45,11 +45,11 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="MvR-Es-G4G" secondAttribute="bottom" constant="20" id="17p-BB-pvJ"/>
                             <constraint firstItem="MvR-Es-G4G" firstAttribute="leading" secondItem="RJL-cm-3kA" secondAttribute="leading" constant="12" id="Fbz-RM-ANk"/>
-                            <constraint firstItem="MvR-Es-G4G" firstAttribute="top" secondItem="ide-4y-uPG" secondAttribute="bottom" constant="12" id="FjK-o8-XNV"/>
+                            <constraint firstItem="MvR-Es-G4G" firstAttribute="top" secondItem="ide-4y-uPG" secondAttribute="bottom" constant="5" id="FjK-o8-XNV"/>
                             <constraint firstAttribute="trailing" secondItem="ide-4y-uPG" secondAttribute="trailing" constant="12" id="NNg-un-I7y"/>
                             <constraint firstAttribute="trailing" secondItem="MvR-Es-G4G" secondAttribute="trailing" constant="12" id="UNy-dn-BaW"/>
                             <constraint firstItem="ide-4y-uPG" firstAttribute="leading" secondItem="RJL-cm-3kA" secondAttribute="leading" constant="12" id="eT1-Jq-LXL"/>
-                            <constraint firstItem="ide-4y-uPG" firstAttribute="top" secondItem="RJL-cm-3kA" secondAttribute="top" constant="12" id="ljC-aJ-Y3G"/>
+                            <constraint firstItem="ide-4y-uPG" firstAttribute="top" secondItem="RJL-cm-3kA" secondAttribute="top" constant="5" id="ljC-aJ-Y3G"/>
                         </constraints>
                     </view>
                 </subviews>

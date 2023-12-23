@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ads-ls-9g4">
-                        <rect key="frame" x="10" y="10" width="396" height="130"/>
+                        <rect key="frame" x="10" y="5" width="396" height="130"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-p4-v0Z">
-                                <rect key="frame" x="0.0" y="15" width="396" height="50"/>
+                                <rect key="frame" x="0.0" y="10" width="396" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.32589786599999998" blue="0.45406699020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9LT-vt-eUB"/>
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hkb-p4-v0Z" secondAttribute="trailing" id="9gV-Jb-6eO"/>
-                            <constraint firstItem="hkb-p4-v0Z" firstAttribute="top" secondItem="Ads-ls-9g4" secondAttribute="top" constant="15" id="Msq-sV-jXY"/>
+                            <constraint firstItem="hkb-p4-v0Z" firstAttribute="top" secondItem="Ads-ls-9g4" secondAttribute="top" constant="10" id="Msq-sV-jXY"/>
                             <constraint firstItem="hkb-p4-v0Z" firstAttribute="centerX" secondItem="Ads-ls-9g4" secondAttribute="centerX" id="uFN-3a-sh6"/>
                             <constraint firstAttribute="height" constant="130" id="xlB-eK-luy"/>
                             <constraint firstItem="hkb-p4-v0Z" firstAttribute="leading" secondItem="Ads-ls-9g4" secondAttribute="leading" id="yrt-cs-caf"/>
@@ -49,7 +49,7 @@
                     <constraint firstAttribute="trailing" secondItem="Ads-ls-9g4" secondAttribute="trailing" constant="10" id="QBK-Ur-tDu"/>
                     <constraint firstAttribute="bottom" secondItem="Ads-ls-9g4" secondAttribute="bottom" constant="10" id="YQz-t3-5If"/>
                     <constraint firstItem="Ads-ls-9g4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="g6S-sC-tH4"/>
-                    <constraint firstItem="Ads-ls-9g4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ucj-PI-XgM"/>
+                    <constraint firstItem="Ads-ls-9g4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ucj-PI-XgM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

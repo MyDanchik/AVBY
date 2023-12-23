@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-Fn-xlb">
-                        <rect key="frame" x="0.0" y="0.0" width="535" height="735"/>
+                        <rect key="frame" x="0.0" y="0.0" width="535" height="715"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YQ0-Oh-Grq">
-                                <rect key="frame" x="0.0" y="0.0" width="535" height="735"/>
+                                <rect key="frame" x="0.0" y="0.0" width="535" height="715"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-oi-4PJ">
                                         <rect key="frame" x="0.0" y="10" width="535" height="75"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyJ-pz-VhL">
-                                                <rect key="frame" x="10" y="5" width="35.333333333333336" height="15.666666666666664"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyJ-pz-VhL">
+                                                <rect key="frame" x="10" y="5" width="505" height="15.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -333,16 +333,19 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kai-kc-igg">
-                                        <rect key="frame" x="0.0" y="650" width="535" height="85"/>
+                                        <rect key="frame" x="0.0" y="650" width="535" height="65"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP4-Bt-BkT">
-                                                <rect key="frame" x="20" y="10" width="495" height="65"/>
+                                            <button opaque="NO" alpha="0.05000000074505806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP4-Bt-BkT">
+                                                <rect key="frame" x="20" y="10" width="495" height="45"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray"/>
+                                                <connections>
+                                                    <action selector="viewsButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cSa-ob-HIB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEH-Qa-cxO">
-                                                <rect key="frame" x="181.33333333333331" y="31.666666666666629" width="172.33333333333331" height="22"/>
+                                                <rect key="frame" x="181.33333333333331" y="21.666666666666629" width="172.33333333333331" height="22"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="  105 просмотров" image="eye" catalog="system">
                                                     <color key="titleColor" name="buttonText"/>
@@ -351,7 +354,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="85" id="2JW-Lk-R7y"/>
+                                            <constraint firstAttribute="height" constant="65" id="2JW-Lk-R7y"/>
                                             <constraint firstItem="dEH-Qa-cxO" firstAttribute="centerY" secondItem="kai-kc-igg" secondAttribute="centerY" id="3Yl-zl-I1I"/>
                                             <constraint firstAttribute="trailing" secondItem="aP4-Bt-BkT" secondAttribute="trailing" constant="20" id="Bx4-wn-QcJ"/>
                                             <constraint firstAttribute="bottom" secondItem="aP4-Bt-BkT" secondAttribute="bottom" constant="10" id="IdA-ey-4DG"/>
@@ -395,17 +398,20 @@
                 <outlet property="infoCarLabel" destination="5a6-y7-Wr4" id="ByS-ca-lTG"/>
                 <outlet property="leaseСalculationButton" destination="kmf-qY-EzF" id="zGz-cf-yVq"/>
                 <outlet property="leasingButton" destination="HZd-pc-lqZ" id="i4v-jW-H70"/>
-                <outlet property="lineView" destination="rOw-8V-ppE" id="N1V-Lp-7va"/>
                 <outlet property="locationCarLabel" destination="GJK-eK-wgD" id="Zey-JR-j55"/>
                 <outlet property="nameCarLabel" destination="JyJ-pz-VhL" id="VIR-TQ-e1f"/>
                 <outlet property="photoCollectionView" destination="kfS-PJ-DeZ" id="DLI-IR-1S6"/>
                 <outlet property="photoView" destination="ZfC-2N-xbz" id="o1l-F7-Y65"/>
                 <outlet property="priceCarLabel" destination="cVJ-sW-5o0" id="FGF-ZO-4oM"/>
+                <outlet property="separatorSecondView" destination="piM-NP-g1A" id="IiE-5i-slb"/>
+                <outlet property="separatorView" destination="rOw-8V-ppE" id="N1V-Lp-7va"/>
                 <outlet property="shareButton" destination="JX5-Ct-qiX" id="vau-e1-h5L"/>
                 <outlet property="topCarView" destination="QU4-WO-hx4" id="a45-ta-fki"/>
                 <outlet property="topImage" destination="gRU-gR-nqn" id="zU8-bk-PVZ"/>
                 <outlet property="topLabel" destination="6eD-qJ-hEG" id="fhv-8D-G5O"/>
                 <outlet property="topvinCarView" destination="q3k-sK-vjX" id="cl8-dz-gta"/>
+                <outlet property="viewsButton" destination="aP4-Bt-BkT" id="bY6-pv-Ert"/>
+                <outlet property="viewsTextButton" destination="dEH-Qa-cxO" id="Wxp-hy-AiC"/>
                 <outlet property="vinCarView" destination="IOG-rH-iTe" id="lgB-nN-03C"/>
                 <outlet property="vinImage" destination="kQ5-xP-T1J" id="0of-GP-TzB"/>
                 <outlet property="vinLabel" destination="HKm-lD-ZrI" id="GgT-4D-aWW"/>

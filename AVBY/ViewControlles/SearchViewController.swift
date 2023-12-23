@@ -7,6 +7,12 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchParamButton: UIButton!
     @IBOutlet weak var buttonParamView: UIView!
     
+    @IBAction func paramButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    @IBAction func searchParamButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -41,6 +47,15 @@ class SearchViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+    }
+    func alertButtonConfiguration() {
+        let alert = UIAlertController(title: "Данная функция в разработке", message: "", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            print("ok")
+        }))
+        
+        present(alert, animated: true)
     }
     // MARK: - Настройка кнопок параметров
     
@@ -110,7 +125,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let attributedLeasingText = createAttributedText(for: leasingText, highlightingSubstring: "\(formatLeasing) BYN", withBoldSystemFont: 13)
         let infoText = infoCar[indexPath.row]
         let equipmentText = equipmentCar[indexPath.row]
-        let arrayEquipment = equipmentText.joined(separator: ",\n")
+        let arrayEquipment = equipmentText.joined(separator: "\n")
         let exchangeText = exchangeCar[indexPath.row]
     
         

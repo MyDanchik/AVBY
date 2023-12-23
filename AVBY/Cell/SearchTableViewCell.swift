@@ -210,6 +210,5 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             exchange: exchangeLabel.text ?? "",
             leasing: leaseСalculationButton.titleLabel?.text ?? ""
         )
-        print("dadad")
     }
 }
