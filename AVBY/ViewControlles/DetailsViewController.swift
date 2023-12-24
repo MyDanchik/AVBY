@@ -8,19 +8,18 @@ struct CarOptions {
     let options: [String]
 }
 class DetailsViewController: UIViewController {
-    
+    // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var callButton: UIButton!
-
     @IBOutlet weak var messageButton: UIButton!
+    // MARK: - IBActions
     @IBAction func callButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
-    
     @IBAction func messageButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
+    
     var receivedNameText: String?
     var receivedPriceText: String?
     var receivedDPriceText: String?
@@ -33,18 +32,16 @@ class DetailsViewController: UIViewController {
     var receivedEquipmentText: [String]?
     var receivedExchangeText: String?
     var receivedLeasingText: String?
-    
     private var sections = [CarViewSection]()
-    
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtonParamView()
         setupTableView()
         setupNavigationBar()
         makeData()
-
-        
     }
+    // MARK: - Настройка таблицы
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -55,6 +52,7 @@ class DetailsViewController: UIViewController {
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
         tableView.register(UINib(nibName: "ButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "ButtonTableViewCell")
     }
+    // MARK: - Настройка навигационной панели
     private func setupNavigationBar() {
         navigationItem.title = receivedNameText
         navigationItem.largeTitleDisplayMode = .never
@@ -62,7 +60,6 @@ class DetailsViewController: UIViewController {
         tabBarController?.tabBar.barTintColor = .tabBar
     }
     // MARK: - Настройка кнопки
-    
     func setupButton(_ button: UIButton, imageName: String, title: String) {
         let sfImage = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
         button.setImage(sfImage, for: .normal)
@@ -74,12 +71,11 @@ class DetailsViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     }
     // MARK: - Настройка кнопок параметров
-    
     func setupButtonParamView() {
         setupButton(callButton, imageName: "", title: "Позвонить...")
         setupButton(messageButton, imageName: "ellipsis.bubble.fill", title: "")
     }
-    
+    // MARK: - Конфигурация предупреждения
     func alertButtonConfiguration() {
         let alert = UIAlertController(title: "Данная функция в разработке", message: "", preferredStyle: .alert)
         
@@ -89,10 +85,7 @@ class DetailsViewController: UIViewController {
         
         present(alert, animated: true)
     }
-    
-    
-    
-    
+    // MARK: - Создание данных для отображения
     private func makeData() {
         let detailsSection: CarViewSection = .options(CarOptions(title: "Объявление", options: [""]))
         let infoSection: CarViewSection = .options(CarOptions(title: "Описание", options: ["\(receivedInfoLong ?? "Нет информации")"]))
@@ -102,9 +95,9 @@ class DetailsViewController: UIViewController {
         
         sections.append(contentsOf: [detailsSection, infoSection, equipmentOptions, exhangeSection, buttonSection])
     }
-
+    
 }
-
+// MARK: - UITableViewDataSource
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -157,7 +150,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
-        
+        // MARK: - Вспомогательные функции
         func createAttributedText(for text: String, highlightingSubstring substring: String, withBoldSystemFont fontSize: CGFloat) -> NSAttributedString {
             
             let attributedText = NSMutableAttributedString(string: text)

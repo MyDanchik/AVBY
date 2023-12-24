@@ -24,18 +24,10 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var vinImage: UIImageView!
     @IBOutlet weak var vinLabel: UILabel!
     @IBOutlet weak var photoView: UIView!
-    
     @IBOutlet weak var infoLongLabel: UILabel!
     @IBOutlet weak var equipmentLabel: UILabel!
     @IBOutlet weak var exchangeLabel: UILabel!
     
-    @IBAction func leasingButtonNext(_ sender: UIButton) {
-        
-    }
-    
-    
-    
-
     // MARK: - Свойства
     var delegate: XIBTableViewCellDelegate?
     private var photos = [UIImage]()

@@ -83,15 +83,12 @@ class DetailsTableViewCell: UITableViewCell {
         leasingEdit()
         configureCollectionViewLayout()
         setupButtonParamView()
-
+        
         viewsButton.layer.cornerRadius = 8
         viewsButton.backgroundColor = .buttonText
         viewsButton.alpha = 0.05
         viewsTextButton.tintColor = .buttonText
-        
         viewsTextButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        
-        
     }
     
     private func configureContainerView() {
@@ -183,23 +180,18 @@ class DetailsTableViewCell: UITableViewCell {
     
     func alertButtonConfiguration() {
         let alert = UIAlertController(title: "Данная функция в разработке", message: "", preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in print("ok")}))
-                presentingDetalisViewController?.present(alert, animated: true)
-        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in print("ok")}))
+        presentingDetalisViewController?.present(alert, animated: true)
     }
-
+    
     // MARK: - Настройка кнопок параметров
-
+    
     func setupButtonParamView() {
         setupButton(shareButton, imageName: "square.and.arrow.up", title: "Поделиться")
         setupButton(commentButton, imageName: "plus.message", title: "Комментарий")
         setupButton(favouritesButton, imageName: "bookmark", title: "В избранное")
     }
 }
-
-
-
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
 extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -228,27 +220,18 @@ extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     //обрезка фото под размер
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let image = photos[indexPath.item]
-        
         let widthMultiplier: CGFloat = 2
         let heightMultiplier: CGFloat = 1
-        
         let targetWidth = collectionView.frame.width * widthMultiplier
         let targetHeight = targetWidth * heightMultiplier
-        
         let maxHeight: CGFloat = 250
         let adjustedHeight = min(targetHeight, maxHeight)
-        
         let targetSize = CGSize(width: targetWidth, height: adjustedHeight)
-        
         let scaledSize = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: targetSize)).size
-        
         return CGSize(width: scaledSize.width.rounded(), height: scaledSize.height.rounded())
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
-    
-    
-
 }

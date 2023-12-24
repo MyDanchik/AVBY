@@ -1,18 +1,19 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    
+    // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var paramButton: UIButton!
     @IBOutlet weak var searchParamButton: UIButton!
     @IBOutlet weak var buttonParamView: UIView!
-    
+    // MARK: - IBActions
     @IBAction func paramButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
     @IBAction func searchParamButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -127,7 +128,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let equipmentText = equipmentCar[indexPath.row]
         let arrayEquipment = equipmentText.joined(separator: "\n")
         let exchangeText = exchangeCar[indexPath.row]
-    
+        
         
         cell.priceCarLabel.attributedText = attributedPricesText
         cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
@@ -159,7 +160,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return attributedText
     }
 }
-
+// MARK: - Перенос данных
 extension SearchViewController: XIBTableViewCellDelegate {
     func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String, leasing: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
