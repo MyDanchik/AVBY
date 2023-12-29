@@ -1,10 +1,18 @@
 import UIKit
 import AVFoundation
 
-class DetailsTableViewCell: UITableViewCell {
-    weak var presentingDetalisViewController: UIViewController?
+protocol DetailsTableViewCellDelegate: AnyObject {
+    func didTapShareButton()
+    func didTapCommentButton()
+    func didTapFavouritesButton()
+    func didTapBelvebButton()
+    func didTapViewsButton()
+}
+
+final class DetailsTableViewCell: UITableViewCell {
+    weak var delegate: DetailsTableViewCellDelegate?
     
-    @IBOutlet weak var conteinerView: UIView!
+    @IBOutlet private var conteinerView: UIView!
     @IBOutlet weak var nameCarLabel: UILabel!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var priceCarLabel: UILabel!
@@ -36,19 +44,19 @@ class DetailsTableViewCell: UITableViewCell {
     
     
     @IBAction func shareButton(_ sender: UIButton) {
-        alertButtonConfiguration()
+        delegate?.didTapShareButton()
     }
     @IBAction func commentButton(_ sender: UIButton) {
-        alertButtonConfiguration()
+        delegate?.didTapCommentButton()
     }
     @IBAction func favouritesButton(_ sender: UIButton) {
-        alertButtonConfiguration()
+        delegate?.didTapFavouritesButton()
     }
     @IBAction func belvebButton(_ sender: UIButton) {
-        alertButtonConfiguration()
+        delegate?.didTapBelvebButton()
     }
     @IBAction func viewsButton(_ sender: UIButton) {
-        alertButtonConfiguration()
+        delegate?.didTapViewsButton()
     }
     // MARK: - Свойства
     
@@ -176,12 +184,6 @@ class DetailsTableViewCell: UITableViewCell {
         button.setTitleColor(.buttonText, for: .normal)
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-    }
-    
-    func alertButtonConfiguration() {
-        let alert = UIAlertController(title: "Данная функция в разработке", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in print("ok")}))
-        presentingDetalisViewController?.present(alert, animated: true)
     }
     
     // MARK: - Настройка кнопок параметров

@@ -124,11 +124,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let attributedPricesText = createAttributedText(for: pricesCarText, highlightingSubstring: "р.", withBoldSystemFont: 15)
         let leasingText = "от \(formatLeasing) BYN/месяц"
         let attributedLeasingText = createAttributedText(for: leasingText, highlightingSubstring: "\(formatLeasing) BYN", withBoldSystemFont: 13)
-        let infoText = infoCar[indexPath.row]
+        let infoText = infoLongCar[indexPath.row]
         let equipmentText = equipmentCar[indexPath.row]
         let arrayEquipment = equipmentText.joined(separator: "\n")
         let exchangeText = exchangeCar[indexPath.row]
-        
         
         cell.priceCarLabel.attributedText = attributedPricesText
         cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
@@ -161,22 +160,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 // MARK: - Перенос данных
+
 extension SearchViewController: XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String, leasing: String) {
+    func receivedData(carDetails: Car) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         self.navigationController?.pushViewController(vc, animated: true)
-        vc.receivedNameText = "\(name)"
-        vc.receivedPriceText = "\(price)"
-        vc.receivedDPriceText = "\(dprice)"
-        vc.receivedInfoText = "\(infoMin)"
-        vc.receivedLocationText = "\(location)"
-        vc.receivedImages = image
-        vc.receivedInfoLong = "\(infoLong)"
-        vc.receivedEquipmentText  = equipment
-        vc.receivedExchangeText = exchange
-        vc.receivedLeasingText = leasing
+        vc.receivedCarDetails = carDetails
     }
-    
-    
 }

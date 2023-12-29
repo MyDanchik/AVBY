@@ -1,8 +1,8 @@
 import UIKit
 import AVFoundation
 
-protocol XIBTableViewCellDelegate {
-    func receivedData(name: String, price: String, dprice: String, infoMin: String, location: String, image: [UIImage], infoLong: String, equipment: [String], exchange: String, leasing: String)
+protocol XIBTableViewCellDelegate: AnyObject {
+    func receivedData(carDetails: Car)
 }
 class SearchTableViewCell: UITableViewCell {
     
@@ -190,17 +190,30 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     private func tapToNext() {
-        delegate?.receivedData(
+        let carDetails = Car(
             name: nameCarLabel.text ?? "",
             price: priceCarLabel.text ?? "",
             dprice: dpriceCarLabel.text ?? "",
+            leasing: leaseСalculationButton.titleLabel?.text ?? "",
             infoMin: infoCarLabel.text ?? "",
-            location: locationCarLabel.text ?? "",
-            image: photos,
             infoLong: infoLongLabel.text ?? "",
+            year: "",
+            gearbox: "",
+            scope: "",
+            engineType: "",
+            mileage: "",
+            bodyType: "",
+            drive: "",
+            color: "",
+            location: locationCarLabel.text ?? "",
+            date: "",
+            image: photos,
+            top: true,
+            vin: false,
             equipment: equipmentLabel.text?.components(separatedBy: "") ?? [],
-            exchange: exchangeLabel.text ?? "",
-            leasing: leaseСalculationButton.titleLabel?.text ?? ""
+            exchange: exchangeLabel.text ?? ""
         )
+        
+        delegate?.receivedData(carDetails: carDetails)
     }
 }

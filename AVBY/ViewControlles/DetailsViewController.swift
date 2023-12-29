@@ -7,7 +7,7 @@ struct CarOptions {
     let title: String
     let options: [String]
 }
-class DetailsViewController: UIViewController {
+final class DetailsViewController: UIViewController, ButtonTableViewCellDelegate, DetailsTableViewCellDelegate {
     // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var callButton: UIButton!
@@ -19,19 +19,8 @@ class DetailsViewController: UIViewController {
     @IBAction func messageButton(_ sender: UIButton) {
         alertButtonConfiguration()
     }
+    var receivedCarDetails: Car?
     
-    var receivedNameText: String?
-    var receivedPriceText: String?
-    var receivedDPriceText: String?
-    var receivedInfoText: String?
-    var receivedLocationText: String?
-    var receivedDescriptionText: String?
-    var receivedImages: [UIImage]?
-    var receivedIndex: String?
-    var receivedInfoLong: String?
-    var receivedEquipmentText: [String]?
-    var receivedExchangeText: String?
-    var receivedLeasingText: String?
     private var sections = [CarViewSection]()
     // MARK: - Жизненный цикл
     override func viewDidLoad() {
@@ -54,7 +43,7 @@ class DetailsViewController: UIViewController {
     }
     // MARK: - Настройка навигационной панели
     private func setupNavigationBar() {
-        navigationItem.title = receivedNameText
+        navigationItem.title = receivedCarDetails?.name
         navigationItem.largeTitleDisplayMode = .never
         tabBarController?.tabBar.isTranslucent = false
         tabBarController?.tabBar.barTintColor = .tabBar
@@ -88,18 +77,39 @@ class DetailsViewController: UIViewController {
     // MARK: - Создание данных для отображения
     private func makeData() {
         let detailsSection: CarViewSection = .options(CarOptions(title: "Объявление", options: [""]))
-        let infoSection: CarViewSection = .options(CarOptions(title: "Описание", options: ["\(receivedInfoLong ?? "Нет информации")"]))
-        let equipmentOptions: CarViewSection = .options(CarOptions(title: "Комплектация", options: receivedEquipmentText ?? []))
-        let exhangeSection: CarViewSection = .options(CarOptions(title: "Обмен не интересует", options: ["\(receivedExchangeText ?? "Нет информации")"]))
+        let infoSection: CarViewSection = .options(CarOptions(title: "Описание", options: ["\(receivedCarDetails?.infoLong ?? "Нет информации")"]))
+        let equipmentOptions: CarViewSection = .options(CarOptions(title: "Комплектация", options: receivedCarDetails?.equipment ?? []))
+        let exhangeSection: CarViewSection = .options(CarOptions(title: "Обмен не интересует", options: ["\(receivedCarDetails?.exchange ?? "Нет информации")"]))
         let buttonSection: CarViewSection = .options(CarOptions(title: "Кнопка", options: [""]))
         
         sections.append(contentsOf: [detailsSection, infoSection, equipmentOptions, exhangeSection, buttonSection])
     }
+    //Функции кнопок
+    func didTapShareButton() {
+        alertButtonConfiguration()
+    }
     
+    func didTapCommentButton() {
+        alertButtonConfiguration()
+    }
+    
+    func didTapFavouritesButton() {
+        alertButtonConfiguration()
+    }
+    
+    func didTapBelvebButton() {
+        alertButtonConfiguration()
+    }
+    
+    func didTapViewsButton() {
+        alertButtonConfiguration()
+    }
 }
 // MARK: - UITableViewDataSource
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
-    
+    func didTapAppealButton() {
+        alertButtonConfiguration()
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -117,13 +127,13 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         case let .options(carOptions):
             if carOptions.title == "Объявление" {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath) as! DetailsTableViewCell
-                let namesCar = receivedNameText
-                let pricesCar = receivedPriceText
-                let infosCar = receivedInfoText
-                let locationsCar = receivedLocationText
-                let detail = receivedImages ?? []
-                let dpricesCar = receivedDPriceText
-                let leasingCar = receivedLeasingText
+                let namesCar = receivedCarDetails?.name
+                let pricesCar = receivedCarDetails?.price
+                let infosCar = receivedCarDetails?.infoMin
+                let locationsCar = receivedCarDetails?.location
+                let detail = receivedCarDetails?.image ?? []
+                let dpricesCar = receivedCarDetails?.dprice
+                let leasingCar = receivedCarDetails?.leasing
                 let pricesCarText = pricesCar ?? "default value"
                 let attributedPricesText = createAttributedText(for: pricesCarText, highlightingSubstring: "р.", withBoldSystemFont: 15)
                 let leasingText = leasingCar ?? "default value"
@@ -136,13 +146,13 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.configure(photos: detail)
                 cell.dpriceCarLabel.text = (dpricesCar)
                 cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
-                cell.presentingDetalisViewController = self
+                cell.delegate = self
                 tableView.backgroundColor = .systemGray6
                 
                 return cell
             }  else if carOptions.title == "Кнопка" {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonTableViewCell", for: indexPath) as! ButtonTableViewCell
-                cell.presentingViewController = self
+                cell.delegate = self // Устанавливаем делегата
                 return cell
             }else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
