@@ -1,12 +1,18 @@
 import UIKit
 import AVFoundation
 
-protocol XIBTableViewCellDelegate: AnyObject {
-    func receivedData(carDetails: Car)
+protocol DetailsTableViewCellDelegate: AnyObject {
+    func didTapShareButton()
+    func didTapCommentButton()
+    func didTapFavouritesButton()
+    func didTapBelvebButton()
+    func didTapViewsButton()
 }
-class SearchTableViewCell: UITableViewCell {
+
+final class DetailsTableViewCell: UITableViewCell {
+    weak var delegate: DetailsTableViewCellDelegate?
     
-    @IBOutlet weak var conteinerView: UIView!
+    @IBOutlet private var conteinerView: UIView!
     @IBOutlet weak var nameCarLabel: UILabel!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var priceCarLabel: UILabel!
@@ -18,18 +24,42 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var vinCarView: UIView!
     @IBOutlet weak var leasingButton: UIButton!
     @IBOutlet weak var leaseСalculationButton: UIButton!
-    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var separatorSecondView: UIView!
     @IBOutlet weak var topImage: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var vinImage: UIImageView!
     @IBOutlet weak var vinLabel: UILabel!
     @IBOutlet weak var photoView: UIView!
-    @IBOutlet weak var infoLongLabel: UILabel!
-    @IBOutlet weak var equipmentLabel: UILabel!
-    @IBOutlet weak var exchangeLabel: UILabel!
+    @IBOutlet weak var viewsButton: UIButton!
+    @IBOutlet weak var viewsTextButton: UIButton!
     
+    @IBOutlet weak var shareButton: UIButton!
+    
+    @IBOutlet weak var commentButton: UIButton!
+    
+    @IBOutlet weak var favouritesButton: UIButton!
+    
+    @IBOutlet weak var belvebButton: UIButton!
+    
+    
+    @IBAction func shareButton(_ sender: UIButton) {
+        delegate?.didTapShareButton()
+    }
+    @IBAction func commentButton(_ sender: UIButton) {
+        delegate?.didTapCommentButton()
+    }
+    @IBAction func favouritesButton(_ sender: UIButton) {
+        delegate?.didTapFavouritesButton()
+    }
+    @IBAction func belvebButton(_ sender: UIButton) {
+        delegate?.didTapBelvebButton()
+    }
+    @IBAction func viewsButton(_ sender: UIButton) {
+        delegate?.didTapViewsButton()
+    }
     // MARK: - Свойства
-    var delegate: XIBTableViewCellDelegate?
+    
     private var photos = [UIImage]()
     
     // MARK: - Публичные методы
@@ -60,12 +90,20 @@ class SearchTableViewCell: UITableViewCell {
         topvinEdit()
         leasingEdit()
         configureCollectionViewLayout()
+        setupButtonParamView()
+        
+        viewsButton.layer.cornerRadius = 8
+        viewsButton.backgroundColor = .buttonText
+        viewsButton.alpha = 0.05
+        viewsTextButton.tintColor = .buttonText
+        viewsTextButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
     }
     
     private func configureContainerView() {
-        conteinerView.layer.cornerRadius = 10
+        conteinerView.layer.cornerRadius = 0
         conteinerView.backgroundColor = .backgroundCell
-        lineView.backgroundColor = UIColor.separate
+        separatorView.backgroundColor = .separate
+        separatorSecondView.backgroundColor = .separate
     }
     
     private func configureCollectionView() {
@@ -99,7 +137,7 @@ class SearchTableViewCell: UITableViewCell {
         dpriceCarLabel.font =  UIFont.systemFont(ofSize: 15)
         
         infoCarLabel.textColor = UIColor.title
-        infoCarLabel.font =  UIFont.systemFont(ofSize: 14)
+        infoCarLabel.font =  UIFont.systemFont(ofSize: 16)
         
         locationCarLabel.textColor = UIColor.subtitle
         locationCarLabel.font =  UIFont.systemFont(ofSize: 12)
@@ -128,17 +166,37 @@ class SearchTableViewCell: UITableViewCell {
     }
     //кнопки лизинга
     private func leasingEdit() {
-        leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        leasingButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        leaseСalculationButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         
         leasingButton.setTitleColor(UIColor.buttonText, for: .normal)
         leaseСalculationButton.setTitleColor(UIColor.buttonText, for: .normal)
+        
+        belvebButton.layer.cornerRadius = 8
+        belvebButton.backgroundColor = .buttonText
+        belvebButton.alpha = 0.05
+    }
+    func setupButton(_ button: UIButton, imageName: String, title: String) {
+        let sfImage = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+        button.setImage(sfImage, for: .normal)
+        button.tintColor = .buttonText
+        button.backgroundColor = .clear
+        button.setTitleColor(.buttonText, for: .normal)
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+    }
+    
+    // MARK: - Настройка кнопок параметров
+    
+    func setupButtonParamView() {
+        setupButton(shareButton, imageName: "square.and.arrow.up", title: "Поделиться")
+        setupButton(commentButton, imageName: "plus.message", title: "Комментарий")
+        setupButton(favouritesButton, imageName: "bookmark", title: "В избранное")
     }
 }
-
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
-extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let iconCell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: "IconCollectionViewCell", for: indexPath) as? IconCollectionViewCell {
@@ -164,56 +222,18 @@ extension SearchTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     //обрезка фото под размер
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let image = photos[indexPath.item]
-        
         let widthMultiplier: CGFloat = 2
         let heightMultiplier: CGFloat = 1
-        
         let targetWidth = collectionView.frame.width * widthMultiplier
         let targetHeight = targetWidth * heightMultiplier
-        
         let maxHeight: CGFloat = 250
         let adjustedHeight = min(targetHeight, maxHeight)
-        
         let targetSize = CGSize(width: targetWidth, height: adjustedHeight)
-        
         let scaledSize = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: targetSize)).size
-        
         return CGSize(width: scaledSize.width.rounded(), height: scaledSize.height.rounded())
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        tapToNext()
-    }
-    
-    private func tapToNext() {
-        let carDetails = Car(
-            name: nameCarLabel.text ?? "",
-            price: priceCarLabel.text ?? "",
-            dprice: dpriceCarLabel.text ?? "",
-            leasing: leaseСalculationButton.titleLabel?.text ?? "",
-            infoMin: infoCarLabel.text ?? "",
-            infoLong: infoLongLabel.text ?? "",
-            year: "",
-            gearbox: "",
-            scope: "",
-            engineType: "",
-            mileage: "",
-            bodyType: "",
-            drive: "",
-            color: "",
-            location: locationCarLabel.text ?? "",
-            date: "",
-            image: photos,
-            top: true,
-            vin: false,
-            equipment: equipmentLabel.text?.components(separatedBy: "") ?? [],
-            exchange: exchangeLabel.text ?? ""
-        )
-        
-        delegate?.receivedData(carDetails: carDetails)
     }
 }

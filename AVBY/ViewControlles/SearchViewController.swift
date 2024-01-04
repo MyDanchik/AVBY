@@ -1,12 +1,19 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    
+    // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var paramButton: UIButton!
     @IBOutlet weak var searchParamButton: UIButton!
     @IBOutlet weak var buttonParamView: UIView!
-    
+    // MARK: - IBActions
+    @IBAction func paramButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    @IBAction func searchParamButton(_ sender: UIButton) {
+        alertButtonConfiguration()
+    }
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -41,6 +48,15 @@ class SearchViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+    }
+    func alertButtonConfiguration() {
+        let alert = UIAlertController(title: "Данная функция в разработке", message: "", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            print("ok")
+        }))
+        
+        present(alert, animated: true)
     }
     // MARK: - Настройка кнопок параметров
     
@@ -108,7 +124,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let attributedPricesText = createAttributedText(for: pricesCarText, highlightingSubstring: "р.", withBoldSystemFont: 15)
         let leasingText = "от \(formatLeasing) BYN/месяц"
         let attributedLeasingText = createAttributedText(for: leasingText, highlightingSubstring: "\(formatLeasing) BYN", withBoldSystemFont: 13)
-
+        let infoText = infoLongCar[indexPath.row]
+        let equipmentText = equipmentCar[indexPath.row]
+        let arrayEquipment = equipmentText.joined(separator: "\n")
+        let exchangeText = exchangeCar[indexPath.row]
+        
         cell.priceCarLabel.attributedText = attributedPricesText
         cell.leaseСalculationButton.setAttributedTitle(attributedLeasingText, for: .normal)
         cell.leasingButton.setTitle("Лизинг", for: .normal)
@@ -118,7 +138,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.infoCarLabel.text = "\(yearsCar), \(gearboxsCar), \(scopesCar), \(engineTypesCar), \(mileagesCar), \(bodyTypesCar), \(drivesCar), \(colorsCar)"
         cell.locationCarLabel.text = "\(locationsCar) · \(datesCar)"
         cell.configure(carTop: carTop, winCar: carWin)
-        
+        cell.infoLongLabel.text = infoText
+        cell.equipmentLabel.text = arrayEquipment
+        cell.exchangeLabel.text = exchangeText
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,5 +157,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return attributedText
+    }
+}
+// MARK: - Перенос данных
+
+extension SearchViewController: XIBTableViewCellDelegate {
+    func receivedData(carDetails: Car) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.receivedCarDetails = carDetails
     }
 }

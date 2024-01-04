@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfY-F9-SRB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfY-F9-SRB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -89,6 +89,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="  Параметры" image="slider.horizontal.3" catalog="system"/>
+                                        <connections>
+                                            <action selector="paramButton:" destination="uw4-76-dps" eventType="touchUpInside" id="cpT-uM-YzQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx8-dT-QBd">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
@@ -99,6 +102,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="sparkle.magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchParamButton:" destination="uw4-76-dps" eventType="touchUpInside" id="8be-Ev-tXd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -138,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxj-nU-Iea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1531" y="-616"/>
+            <point key="canvasLocation" x="1576" y="-616"/>
         </scene>
         <!--Проечее-->
         <scene sceneID="Bs1-cr-BlH">
@@ -237,10 +243,77 @@
             </objects>
             <point key="canvasLocation" x="969" y="1771"/>
         </scene>
+        <!--Поиск-->
+        <scene sceneID="aqe-WZ-Kjr">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R05-Ms-2On" customClass="DetailsViewController" customModule="AVBY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AqR-Pb-0ES">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0O2-jy-MtP">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" name="backgroundVC"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRl-Xn-Ppm">
+                                <rect key="frame" x="10" y="758" width="293" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ODd-dP-9wS"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Позвонить"/>
+                                <connections>
+                                    <action selector="callButton:" destination="R05-Ms-2On" eventType="touchUpInside" id="I7z-Ij-a6N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VV3-bf-sOA">
+                                <rect key="frame" x="313" y="758" width="70" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ddr-Z3-45e"/>
+                                    <constraint firstAttribute="width" constant="70" id="nLh-rR-HSJ"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ellipsis.message.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="messageButton:" destination="R05-Ms-2On" eventType="touchUpInside" id="7yW-ik-a3z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KTG-mZ-qPU"/>
+                        <color key="backgroundColor" name="backgroundCell"/>
+                        <constraints>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="trailing" secondItem="VV3-bf-sOA" secondAttribute="trailing" constant="10" id="B4T-b6-ed3"/>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="bottom" secondItem="mRl-Xn-Ppm" secondAttribute="bottom" constant="10" id="Ecb-Qq-qKz"/>
+                            <constraint firstItem="VV3-bf-sOA" firstAttribute="leading" secondItem="mRl-Xn-Ppm" secondAttribute="trailing" constant="10" id="Ecj-lG-YkF"/>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="bottom" secondItem="VV3-bf-sOA" secondAttribute="bottom" constant="10" id="LdC-us-mdZ"/>
+                            <constraint firstItem="0O2-jy-MtP" firstAttribute="top" secondItem="KTG-mZ-qPU" secondAttribute="top" id="MVk-zV-tyR"/>
+                            <constraint firstItem="mRl-Xn-Ppm" firstAttribute="leading" secondItem="KTG-mZ-qPU" secondAttribute="leading" constant="10" id="QyC-A5-Upi"/>
+                            <constraint firstItem="KTG-mZ-qPU" firstAttribute="trailing" secondItem="0O2-jy-MtP" secondAttribute="trailing" id="T2a-2P-mzH"/>
+                            <constraint firstItem="0O2-jy-MtP" firstAttribute="leading" secondItem="KTG-mZ-qPU" secondAttribute="leading" id="VIr-Vf-trP"/>
+                            <constraint firstAttribute="bottom" secondItem="0O2-jy-MtP" secondAttribute="bottom" id="VRV-wH-0FZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="g6N-cJ-glK"/>
+                    <navigationItem key="navigationItem" style="editor" id="0IH-de-jbF"/>
+                    <connections>
+                        <outlet property="callButton" destination="mRl-Xn-Ppm" id="aWv-K0-Yoz"/>
+                        <outlet property="messageButton" destination="VV3-bf-sOA" id="qR0-KA-k6I"/>
+                        <outlet property="tableView" destination="0O2-jy-MtP" id="d1V-uo-SYM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0w-pf-6Ke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2398" y="-616"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="ellipsis.bubble.fill" catalog="system" width="128" height="110"/>
+        <image name="ellipsis.message.fill" catalog="system" width="128" height="114"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
@@ -259,10 +332,13 @@
             <color red="0.24705882352941178" green="0.55686274509803924" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
